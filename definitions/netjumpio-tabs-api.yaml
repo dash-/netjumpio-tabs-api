@@ -1,0 +1,5493 @@
+paths:
+  '/groups/{id}/parent':
+    get:
+      tags:
+        - group
+      summary: Fetches hasOne relation parent.
+      operationId: group.prototype.__get__parent
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in parent of this model.
+      operationId: group.prototype.__create__parent
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update parent of this model.
+      operationId: group.prototype.__update__parent
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes parent of this model.
+      operationId: group.prototype.__destroy__parent
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/roles/{fk}':
+    get:
+      tags:
+        - group
+      summary: Find a related item by id for roles.
+      operationId: group.prototype.__findById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Delete a related item by id for roles.
+      operationId: group.prototype.__destroyById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update a related item by id for roles.
+      operationId: group.prototype.__updateById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/groups/{id}/tabsets/{fk}':
+    get:
+      tags:
+        - group
+      summary: Find a related item by id for tabsets.
+      operationId: group.prototype.__findById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Delete a related item by id for tabsets.
+      operationId: group.prototype.__destroyById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update a related item by id for tabsets.
+      operationId: group.prototype.__updateById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/groups/{id}/members/{fk}':
+    get:
+      tags:
+        - group
+      summary: Find a related item by id for members.
+      operationId: group.prototype.__findById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Delete a related item by id for members.
+      operationId: group.prototype.__destroyById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update a related item by id for members.
+      operationId: group.prototype.__updateById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/groups/{id}/members/rel/{fk}':
+    put:
+      tags:
+        - group
+      summary: Add a related item by id for members.
+      operationId: group.prototype.__link__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/groupMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Remove the members relation to an item by id.
+      operationId: group.prototype.__unlink__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - group
+      summary: Check the existence of members relation to an item by id.
+      operationId: group.prototype.__exists__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/groups/{id}/roles':
+    get:
+      tags:
+        - group
+      summary: Queries roles of group.
+      operationId: group.prototype.__get__roles
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in roles of this model.
+      operationId: group.prototype.__create__roles
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes all roles of this model.
+      operationId: group.prototype.__delete__roles
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/roles/count':
+    get:
+      tags:
+        - group
+      summary: Counts roles of group.
+      operationId: group.prototype.__count__roles
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/groups/{id}/tabsets':
+    get:
+      tags:
+        - group
+      summary: Queries tabsets of group.
+      operationId: group.prototype.__get__tabsets
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in tabsets of this model.
+      operationId: group.prototype.__create__tabsets
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes all tabsets of this model.
+      operationId: group.prototype.__delete__tabsets
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/tabsets/count':
+    get:
+      tags:
+        - group
+      summary: Counts tabsets of group.
+      operationId: group.prototype.__count__tabsets
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/groups/{id}/members':
+    get:
+      tags:
+        - group
+      summary: Queries members of group.
+      operationId: group.prototype.__get__members
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in members of this model.
+      operationId: group.prototype.__create__members
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes all members of this model.
+      operationId: group.prototype.__delete__members
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/members/count':
+    get:
+      tags:
+        - group
+      summary: Counts members of group.
+      operationId: group.prototype.__count__members
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /groups:
+    post:
+      tags:
+        - group
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: group.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/group'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: group.upsert__put_groups
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/group'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    patch:
+      tags:
+        - group
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: group.upsert__patch_groups
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/group'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    get:
+      tags:
+        - group
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: group.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/group'
+      deprecated: false
+  /groups/replaceOrCreate:
+    post:
+      tags:
+        - group
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: group.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/group'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  /groups/upsertWithWhere:
+    post:
+      tags:
+        - group
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: group.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/group'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/groups/{id}/exists':
+    get:
+      tags:
+        - group
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'group.exists__get_groups_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/groups/{id}':
+    head:
+      tags:
+        - group
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'group.exists__head_groups_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - group
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: group.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: group.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'group.prototype.updateAttributes__put_groups_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    patch:
+      tags:
+        - group
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'group.prototype.updateAttributes__patch_groups_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/groups/{id}/replace':
+    post:
+      tags:
+        - group
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: group.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/group'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  /groups/findOne:
+    get:
+      tags:
+        - group
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: group.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  /groups/update:
+    post:
+      tags:
+        - group
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: group.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/group'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /groups/count:
+    get:
+      tags:
+        - group
+      summary: Count instances of the model matched by where from the data source.
+      operationId: group.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/roles/{id}/tabsets/{fk}':
+    get:
+      tags:
+        - role
+      summary: Find a related item by id for tabsets.
+      operationId: role.prototype.__findById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Delete a related item by id for tabsets.
+      operationId: role.prototype.__destroyById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: Update a related item by id for tabsets.
+      operationId: role.prototype.__updateById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/roles/{id}/members/{fk}':
+    get:
+      tags:
+        - role
+      summary: Find a related item by id for members.
+      operationId: role.prototype.__findById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Delete a related item by id for members.
+      operationId: role.prototype.__destroyById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: Update a related item by id for members.
+      operationId: role.prototype.__updateById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/roles/{id}/members/rel/{fk}':
+    put:
+      tags:
+        - role
+      summary: Add a related item by id for members.
+      operationId: role.prototype.__link__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/roleMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Remove the members relation to an item by id.
+      operationId: role.prototype.__unlink__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - role
+      summary: Check the existence of members relation to an item by id.
+      operationId: role.prototype.__exists__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/roles/{id}/tabsets':
+    get:
+      tags:
+        - role
+      summary: Queries tabsets of role.
+      operationId: role.prototype.__get__tabsets
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - role
+      summary: Creates a new instance in tabsets of this model.
+      operationId: role.prototype.__create__tabsets
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Deletes all tabsets of this model.
+      operationId: role.prototype.__delete__tabsets
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/roles/{id}/tabsets/count':
+    get:
+      tags:
+        - role
+      summary: Counts tabsets of role.
+      operationId: role.prototype.__count__tabsets
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/roles/{id}/members':
+    get:
+      tags:
+        - role
+      summary: Queries members of role.
+      operationId: role.prototype.__get__members
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+    post:
+      tags:
+        - role
+      summary: Creates a new instance in members of this model.
+      operationId: role.prototype.__create__members
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Deletes all members of this model.
+      operationId: role.prototype.__delete__members
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/roles/{id}/members/count':
+    get:
+      tags:
+        - role
+      summary: Counts members of role.
+      operationId: role.prototype.__count__members
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /roles:
+    post:
+      tags:
+        - role
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: role.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: role.upsert__put_roles
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    patch:
+      tags:
+        - role
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: role.upsert__patch_roles
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    get:
+      tags:
+        - role
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: role.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+      deprecated: false
+  /roles/replaceOrCreate:
+    post:
+      tags:
+        - role
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: role.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  /roles/upsertWithWhere:
+    post:
+      tags:
+        - role
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: role.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/roles/{id}/exists':
+    get:
+      tags:
+        - role
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'role.exists__get_roles_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/roles/{id}':
+    head:
+      tags:
+        - role
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'role.exists__head_roles_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - role
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: role.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: role.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'role.prototype.updateAttributes__put_roles_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    patch:
+      tags:
+        - role
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'role.prototype.updateAttributes__patch_roles_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/roles/{id}/replace':
+    post:
+      tags:
+        - role
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: role.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  /roles/findOne:
+    get:
+      tags:
+        - role
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: role.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  /roles/update:
+    post:
+      tags:
+        - role
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: role.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/role'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /roles/count:
+    get:
+      tags:
+        - role
+      summary: Count instances of the model matched by where from the data source.
+      operationId: role.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/tabsets/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for tabsets.
+      operationId: person.prototype.__findById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for tabsets.
+      operationId: person.prototype.__destroyById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for tabsets.
+      operationId: person.prototype.__updateById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/people/{id}/roles/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for roles.
+      operationId: person.prototype.__findById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for roles.
+      operationId: person.prototype.__destroyById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for roles.
+      operationId: person.prototype.__updateById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/people/{id}/roles/rel/{fk}':
+    put:
+      tags:
+        - person
+      summary: Add a related item by id for roles.
+      operationId: person.prototype.__link__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/roleMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Remove the roles relation to an item by id.
+      operationId: person.prototype.__unlink__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - person
+      summary: Check the existence of roles relation to an item by id.
+      operationId: person.prototype.__exists__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/people/{id}/groups/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for groups.
+      operationId: person.prototype.__findById__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for groups.
+      operationId: person.prototype.__destroyById__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for groups.
+      operationId: person.prototype.__updateById__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/people/{id}/groups/rel/{fk}':
+    put:
+      tags:
+        - person
+      summary: Add a related item by id for groups.
+      operationId: person.prototype.__link__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/groupMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Remove the groups relation to an item by id.
+      operationId: person.prototype.__unlink__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - person
+      summary: Check the existence of groups relation to an item by id.
+      operationId: person.prototype.__exists__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/people/{id}/tabsets':
+    get:
+      tags:
+        - person
+      summary: Queries tabsets of person.
+      operationId: person.prototype.__get__tabsets
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in tabsets of this model.
+      operationId: person.prototype.__create__tabsets
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all tabsets of this model.
+      operationId: person.prototype.__delete__tabsets
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/tabsets/count':
+    get:
+      tags:
+        - person
+      summary: Counts tabsets of person.
+      operationId: person.prototype.__count__tabsets
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/roles':
+    get:
+      tags:
+        - person
+      summary: Queries roles of person.
+      operationId: person.prototype.__get__roles
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in roles of this model.
+      operationId: person.prototype.__create__roles
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all roles of this model.
+      operationId: person.prototype.__delete__roles
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/roles/count':
+    get:
+      tags:
+        - person
+      summary: Counts roles of person.
+      operationId: person.prototype.__count__roles
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/groups':
+    get:
+      tags:
+        - person
+      summary: Queries groups of person.
+      operationId: person.prototype.__get__groups
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/group'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in groups of this model.
+      operationId: person.prototype.__create__groups
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all groups of this model.
+      operationId: person.prototype.__delete__groups
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/groups/count':
+    get:
+      tags:
+        - person
+      summary: Counts groups of person.
+      operationId: person.prototype.__count__groups
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /people:
+    post:
+      tags:
+        - person
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: person.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: person.upsert__put_people
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    patch:
+      tags:
+        - person
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: person.upsert__patch_people
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    get:
+      tags:
+        - person
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: person.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+  /people/replaceOrCreate:
+    post:
+      tags:
+        - person
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: person.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  /people/upsertWithWhere:
+    post:
+      tags:
+        - person
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: person.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/people/{id}/exists':
+    get:
+      tags:
+        - person
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'person.exists__get_people_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/people/{id}':
+    head:
+      tags:
+        - person
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'person.exists__head_people_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - person
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: person.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: person.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'person.prototype.updateAttributes__put_people_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    patch:
+      tags:
+        - person
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'person.prototype.updateAttributes__patch_people_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/people/{id}/replace':
+    post:
+      tags:
+        - person
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: person.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  /people/findOne:
+    get:
+      tags:
+        - person
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: person.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  /people/update:
+    post:
+      tags:
+        - person
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: person.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /people/count:
+    get:
+      tags:
+        - person
+      summary: Count instances of the model matched by where from the data source.
+      operationId: person.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/tabsets/{id}/cloneOf':
+    get:
+      tags:
+        - tabset
+      summary: Fetches hasOne relation cloneOf.
+      operationId: tabset.prototype.__get__cloneOf
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - tabset
+      summary: Creates a new instance in cloneOf of this model.
+      operationId: tabset.prototype.__create__cloneOf
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    put:
+      tags:
+        - tabset
+      summary: Update cloneOf of this model.
+      operationId: tabset.prototype.__update__cloneOf
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: Deletes cloneOf of this model.
+      operationId: tabset.prototype.__destroy__cloneOf
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/tabsets/{id}/tabs/{fk}':
+    get:
+      tags:
+        - tabset
+      summary: Find a related item by id for tabs.
+      operationId: tabset.prototype.__findById__tabs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: Delete a related item by id for tabs.
+      operationId: tabset.prototype.__destroyById__tabs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - tabset
+      summary: Update a related item by id for tabs.
+      operationId: tabset.prototype.__updateById__tabs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabs
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tab'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+  '/tabsets/{id}/tabs':
+    get:
+      tags:
+        - tabset
+      summary: Queries tabs of tabset.
+      operationId: tabset.prototype.__get__tabs
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tab'
+      deprecated: false
+    post:
+      tags:
+        - tabset
+      summary: Creates a new instance in tabs of this model.
+      operationId: tabset.prototype.__create__tabs
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tab'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: Deletes all tabs of this model.
+      operationId: tabset.prototype.__delete__tabs
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/tabsets/{id}/tabs/count':
+    get:
+      tags:
+        - tabset
+      summary: Counts tabs of tabset.
+      operationId: tabset.prototype.__count__tabs
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /tabsets:
+    post:
+      tags:
+        - tabset
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: tabset.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tabset'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    put:
+      tags:
+        - tabset
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: tabset.upsert__put_tabsets
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tabset'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    patch:
+      tags:
+        - tabset
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: tabset.upsert__patch_tabsets
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tabset'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    get:
+      tags:
+        - tabset
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: tabset.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+  /tabsets/replaceOrCreate:
+    post:
+      tags:
+        - tabset
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: tabset.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tabset'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  /tabsets/upsertWithWhere:
+    post:
+      tags:
+        - tabset
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: tabset.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tabset'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/tabsets/{id}/exists':
+    get:
+      tags:
+        - tabset
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'tabset.exists__get_tabsets_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/tabsets/{id}':
+    head:
+      tags:
+        - tabset
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'tabset.exists__head_tabsets_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - tabset
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: tabset.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: tabset.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - tabset
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'tabset.prototype.updateAttributes__put_tabsets_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    patch:
+      tags:
+        - tabset
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'tabset.prototype.updateAttributes__patch_tabsets_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/tabsets/{id}/replace':
+    post:
+      tags:
+        - tabset
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: tabset.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tabset'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  /tabsets/findOne:
+    get:
+      tags:
+        - tabset
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: tabset.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  /tabsets/update:
+    post:
+      tags:
+        - tabset
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: tabset.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tabset'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /tabsets/count:
+    get:
+      tags:
+        - tabset
+      summary: Count instances of the model matched by where from the data source.
+      operationId: tabset.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/roleMembers/{id}/permissions/{fk}':
+    get:
+      tags:
+        - roleMember
+      summary: Find a related item by id for permissions.
+      operationId: roleMember.prototype.__findById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - roleMember
+      summary: Delete a related item by id for permissions.
+      operationId: roleMember.prototype.__destroyById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - roleMember
+      summary: Update a related item by id for permissions.
+      operationId: roleMember.prototype.__updateById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  '/roleMembers/{id}/permissions':
+    get:
+      tags:
+        - roleMember
+      summary: Queries permissions of roleMember.
+      operationId: roleMember.prototype.__get__permissions
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/permission'
+      deprecated: false
+    post:
+      tags:
+        - roleMember
+      summary: Creates a new instance in permissions of this model.
+      operationId: roleMember.prototype.__create__permissions
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - roleMember
+      summary: Deletes all permissions of this model.
+      operationId: roleMember.prototype.__delete__permissions
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/roleMembers/{id}/permissions/count':
+    get:
+      tags:
+        - roleMember
+      summary: Counts permissions of roleMember.
+      operationId: roleMember.prototype.__count__permissions
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /roleMembers:
+    post:
+      tags:
+        - roleMember
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: roleMember.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/roleMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    put:
+      tags:
+        - roleMember
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: roleMember.upsert__put_roleMembers
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/roleMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    patch:
+      tags:
+        - roleMember
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: roleMember.upsert__patch_roleMembers
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/roleMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    get:
+      tags:
+        - roleMember
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: roleMember.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/roleMember'
+      deprecated: false
+  /roleMembers/replaceOrCreate:
+    post:
+      tags:
+        - roleMember
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: roleMember.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/roleMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+  /roleMembers/upsertWithWhere:
+    post:
+      tags:
+        - roleMember
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: roleMember.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/roleMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+  '/roleMembers/{id}/exists':
+    get:
+      tags:
+        - roleMember
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'roleMember.exists__get_roleMembers_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/roleMembers/{id}':
+    head:
+      tags:
+        - roleMember
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'roleMember.exists__head_roleMembers_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - roleMember
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: roleMember.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    delete:
+      tags:
+        - roleMember
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: roleMember.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - roleMember
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'roleMember.prototype.updateAttributes__put_roleMembers_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/roleMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    patch:
+      tags:
+        - roleMember
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'roleMember.prototype.updateAttributes__patch_roleMembers_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/roleMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+  '/roleMembers/{id}/replace':
+    post:
+      tags:
+        - roleMember
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: roleMember.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/roleMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+  /roleMembers/findOne:
+    get:
+      tags:
+        - roleMember
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: roleMember.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+  /roleMembers/update:
+    post:
+      tags:
+        - roleMember
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: roleMember.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/roleMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /roleMembers/count:
+    get:
+      tags:
+        - roleMember
+      summary: Count instances of the model matched by where from the data source.
+      operationId: roleMember.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/groupMembers/{id}/permissions/{fk}':
+    get:
+      tags:
+        - groupMember
+      summary: Find a related item by id for permissions.
+      operationId: groupMember.prototype.__findById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - groupMember
+      summary: Delete a related item by id for permissions.
+      operationId: groupMember.prototype.__destroyById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - groupMember
+      summary: Update a related item by id for permissions.
+      operationId: groupMember.prototype.__updateById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  '/groupMembers/{id}/permissions':
+    get:
+      tags:
+        - groupMember
+      summary: Queries permissions of groupMember.
+      operationId: groupMember.prototype.__get__permissions
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/permission'
+      deprecated: false
+    post:
+      tags:
+        - groupMember
+      summary: Creates a new instance in permissions of this model.
+      operationId: groupMember.prototype.__create__permissions
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - groupMember
+      summary: Deletes all permissions of this model.
+      operationId: groupMember.prototype.__delete__permissions
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groupMembers/{id}/permissions/count':
+    get:
+      tags:
+        - groupMember
+      summary: Counts permissions of groupMember.
+      operationId: groupMember.prototype.__count__permissions
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /groupMembers:
+    post:
+      tags:
+        - groupMember
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: groupMember.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/groupMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    put:
+      tags:
+        - groupMember
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: groupMember.upsert__put_groupMembers
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/groupMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    patch:
+      tags:
+        - groupMember
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: groupMember.upsert__patch_groupMembers
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/groupMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    get:
+      tags:
+        - groupMember
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: groupMember.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/groupMember'
+      deprecated: false
+  /groupMembers/replaceOrCreate:
+    post:
+      tags:
+        - groupMember
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: groupMember.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/groupMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+  /groupMembers/upsertWithWhere:
+    post:
+      tags:
+        - groupMember
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: groupMember.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/groupMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+  '/groupMembers/{id}/exists':
+    get:
+      tags:
+        - groupMember
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'groupMember.exists__get_groupMembers_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/groupMembers/{id}':
+    head:
+      tags:
+        - groupMember
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'groupMember.exists__head_groupMembers_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - groupMember
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: groupMember.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    delete:
+      tags:
+        - groupMember
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: groupMember.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - groupMember
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'groupMember.prototype.updateAttributes__put_groupMembers_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/groupMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    patch:
+      tags:
+        - groupMember
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'groupMember.prototype.updateAttributes__patch_groupMembers_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/groupMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+  '/groupMembers/{id}/replace':
+    post:
+      tags:
+        - groupMember
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: groupMember.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/groupMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+  /groupMembers/findOne:
+    get:
+      tags:
+        - groupMember
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: groupMember.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+  /groupMembers/update:
+    post:
+      tags:
+        - groupMember
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: groupMember.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/groupMember'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /groupMembers/count:
+    get:
+      tags:
+        - groupMember
+      summary: Count instances of the model matched by where from the data source.
+      operationId: groupMember.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /permissions:
+    post:
+      tags:
+        - permission
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: permission.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/permission'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    put:
+      tags:
+        - permission
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: permission.upsert__put_permissions
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/permission'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    patch:
+      tags:
+        - permission
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: permission.upsert__patch_permissions
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/permission'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    get:
+      tags:
+        - permission
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: permission.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/permission'
+      deprecated: false
+  /permissions/replaceOrCreate:
+    post:
+      tags:
+        - permission
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: permission.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/permission'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  /permissions/upsertWithWhere:
+    post:
+      tags:
+        - permission
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: permission.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/permission'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  '/permissions/{id}/exists':
+    get:
+      tags:
+        - permission
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'permission.exists__get_permissions_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/permissions/{id}':
+    head:
+      tags:
+        - permission
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'permission.exists__head_permissions_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - permission
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: permission.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - permission
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: permission.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - permission
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'permission.prototype.updateAttributes__put_permissions_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    patch:
+      tags:
+        - permission
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'permission.prototype.updateAttributes__patch_permissions_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  '/permissions/{id}/replace':
+    post:
+      tags:
+        - permission
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: permission.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/permission'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  /permissions/findOne:
+    get:
+      tags:
+        - permission
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: permission.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  /permissions/update:
+    post:
+      tags:
+        - permission
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: permission.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/permission'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /permissions/count:
+    get:
+      tags:
+        - permission
+      summary: Count instances of the model matched by where from the data source.
+      operationId: permission.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /tabs:
+    post:
+      tags:
+        - tab
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: tab.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    put:
+      tags:
+        - tab
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: tab.upsert__put_tabs
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    patch:
+      tags:
+        - tab
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: tab.upsert__patch_tabs
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    get:
+      tags:
+        - tab
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: tab.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tab'
+      deprecated: false
+  /tabs/replaceOrCreate:
+    post:
+      tags:
+        - tab
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: tab.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+  /tabs/upsertWithWhere:
+    post:
+      tags:
+        - tab
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: tab.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+  '/tabs/{id}/exists':
+    get:
+      tags:
+        - tab
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'tab.exists__get_tabs_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/tabs/{id}':
+    head:
+      tags:
+        - tab
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'tab.exists__head_tabs_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - tab
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: tab.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    delete:
+      tags:
+        - tab
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: tab.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - tab
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'tab.prototype.updateAttributes__put_tabs_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tab'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    patch:
+      tags:
+        - tab
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'tab.prototype.updateAttributes__patch_tabs_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tab'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+  '/tabs/{id}/replace':
+    post:
+      tags:
+        - tab
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: tab.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/tab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+  /tabs/findOne:
+    get:
+      tags:
+        - tab
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: tab.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+  /tabs/update:
+    post:
+      tags:
+        - tab
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: tab.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/tab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /tabs/count:
+    get:
+      tags:
+        - tab
+      summary: Count instances of the model matched by where from the data source.
+      operationId: tab.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+definitions:
+  x-any:
+    properties: {}
+  group:
+    properties:
+      logoUrl:
+        description: URL of icon image
+        type: string
+      name:
+        description: Group name
+        type: string
+      url:
+        description: 'Group''s official website, if applicable'
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      children:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - name
+    additionalProperties: false
+  role:
+    properties:
+      logoUrl:
+        description: URL of icon image
+        type: string
+      name:
+        description: Role name
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      group:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - name
+    additionalProperties: false
+  tabset:
+    properties:
+      name:
+        description: Tabset name
+        type: string
+      logoUrl:
+        description: URL of icon image
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      tabsetId:
+        $ref: '#/definitions/ObjectID'
+      groupOwner:
+        $ref: '#/definitions/ObjectID'
+      roleOwner:
+        $ref: '#/definitions/ObjectID'
+      owner:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - name
+    additionalProperties: false
+  person:
+    properties:
+      name:
+        description: User's full name
+        type: string
+      logoUrl:
+        description: URL of icon image
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - name
+    additionalProperties: false
+  groupMember:
+    properties:
+      id:
+        $ref: '#/definitions/ObjectID'
+    additionalProperties: false
+  roleMember:
+    properties:
+      id:
+        $ref: '#/definitions/ObjectID'
+    additionalProperties: false
+  tab:
+    properties:
+      url:
+        description: Tab website
+        type: string
+      name:
+        description: Website name
+        type: string
+      logoUrl:
+        description: URL of icon image
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      tabset:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - url
+    additionalProperties: false
+  permission:
+    properties:
+      type:
+        description: 'Permission type (eg. READ, WRITE, etc)'
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      role:
+        $ref: '#/definitions/ObjectID'
+      group:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - type
+    additionalProperties: false
+  ObjectID:
+    type: string
+    pattern: '^[a-fA-F\d]{24}$'
+basePath: /api
+swagger: '2.0'
+info:
+  x-ibm-name: netjumpio-tabs-api
+  version: 1.0.0
+  title: netjumpio-tabs-api
+schemes:
+  - https
+host: $(catalog.host)
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)

@@ -1,0 +1,20 @@
+{
+  "name": "roleMember",
+  "plural": "roleMembers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "permissions": {
+      "type": "hasMany",
+      "model": "permission",
+      "foreignKey": "role"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

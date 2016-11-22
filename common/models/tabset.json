@@ -1,0 +1,37 @@
+{
+  "name": "tabset",
+  "plural": "tabsets",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": true,
+      "description": "Tabset name"
+    },
+    "logoUrl": {
+      "type": "string",
+      "required": false,
+      "description": "URL of icon image"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cloneOf": {
+      "type": "hasOne",
+      "model": "tabset",
+      "foreignKey": ""
+    },
+    "tabs": {
+      "type": "hasMany",
+      "model": "tab",
+      "foreignKey": "tabset"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

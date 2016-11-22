@@ -1,0 +1,18 @@
+[x] tabset -> has -> tabset (Key: cloneOf)
+[x] tabset -> hasMany -> tab (Key: tabs, FK: tabset)
+
+[x] group -> has -> group (Key: parent)
+[x] group -> hasMany -> tabset (Key: tabsets, FK: groupOwner)
+[x] group -> hasMany -> role (Key: roles, FK: group)
+[x] group -> hasMany -> person (TT: groupMember, Key: members, FK: group)
+
+[x] role -> hasMany -> tabset (Key: tabsets, FK: roleOwner)
+[x] role -> hasMany -> person (TT: roleMember, Key: members, FK: role)
+
+[x] person -> hasMany -> tabset (Key: tabsets, FK: owner)
+[x] person -> hasMany -> group (TT: groupMember, Key: groups, FK: person)
+[x] person -> hasMany -> role (TT: roleMember, Key: roles, FK: person)
+
+[x] groupMember -> hasMany -> permission (Key: permissions, FK: group)
+
+[x] roleMember -> hasMany -> permission (Key: permissions, FK: role)

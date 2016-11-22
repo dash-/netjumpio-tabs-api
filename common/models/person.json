@@ -1,0 +1,44 @@
+{
+  "name": "person",
+  "plural": "people",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": true,
+      "description": "User's full name"
+    },
+    "logoUrl": {
+      "type": "string",
+      "required": false,
+      "description": "URL of icon image"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tabsets": {
+      "type": "hasMany",
+      "model": "tabset",
+      "foreignKey": "owner"
+    },
+    "groups": {
+      "type": "hasMany",
+      "model": "group",
+      "foreignKey": "person",
+      "through": "groupMember"
+    },
+    "roles": {
+      "type": "hasMany",
+      "model": "role",
+      "foreignKey": "person",
+      "through": "roleMember"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

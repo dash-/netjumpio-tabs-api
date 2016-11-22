@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "group": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "role": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "person": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "tabset": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "roleMember": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "groupMember": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "permission": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "tab": {
+    "dataSource": "Mongo",
+    "public": true
+  }
+}

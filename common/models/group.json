@@ -1,0 +1,53 @@
+{
+  "name": "group",
+  "plural": "groups",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "logoUrl": {
+      "type": "string",
+      "required": false,
+      "description": "URL of icon image"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": true,
+      "description": "Group name"
+    },
+    "url": {
+      "type": "string",
+      "required": false,
+      "description": "Group's official website, if applicable"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parent": {
+      "type": "hasOne",
+      "model": "group",
+      "foreignKey": "children"
+    },
+    "tabsets": {
+      "type": "hasMany",
+      "model": "tabset",
+      "foreignKey": "groupOwner"
+    },
+    "roles": {
+      "type": "hasMany",
+      "model": "role",
+      "foreignKey": "group"
+    },
+    "members": {
+      "type": "hasMany",
+      "model": "person",
+      "foreignKey": "group",
+      "through": "groupMember"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

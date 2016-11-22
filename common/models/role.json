@@ -1,0 +1,38 @@
+{
+  "name": "role",
+  "plural": "roles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "logoUrl": {
+      "type": "string",
+      "required": false,
+      "description": "URL of icon image"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": true,
+      "description": "Role name"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tabsets": {
+      "type": "hasMany",
+      "model": "tabset",
+      "foreignKey": "roleOwner"
+    },
+    "members": {
+      "type": "hasMany",
+      "model": "person",
+      "foreignKey": "role",
+      "through": "roleMember"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

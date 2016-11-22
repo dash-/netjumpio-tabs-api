@@ -1,0 +1,20 @@
+{
+  "name": "groupMember",
+  "plural": "groupMembers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "permissions": {
+      "type": "hasMany",
+      "model": "permission",
+      "foreignKey": "group"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
