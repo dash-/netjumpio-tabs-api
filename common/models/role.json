@@ -20,19 +20,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "tabsets": {
-      "type": "hasMany",
-      "model": "tabset",
-      "foreignKey": "roleOwner"
-    },
-    "members": {
-      "type": "hasMany",
-      "model": "person",
-      "foreignKey": "role",
-      "through": "roleMember"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

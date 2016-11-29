@@ -20,18 +20,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "cloneOf": {
-      "type": "hasOne",
-      "model": "tabset",
-      "foreignKey": ""
-    },
-    "tabs": {
-      "type": "hasMany",
-      "model": "tab",
-      "foreignKey": "tabset"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

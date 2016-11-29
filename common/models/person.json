@@ -1,7 +1,7 @@
 {
   "name": "person",
   "plural": "people",
-  "base": "PersistedModel",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -20,25 +20,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "tabsets": {
-      "type": "hasMany",
-      "model": "tabset",
-      "foreignKey": "owner"
-    },
-    "groups": {
-      "type": "hasMany",
-      "model": "group",
-      "foreignKey": "person",
-      "through": "groupMember"
-    },
-    "roles": {
-      "type": "hasMany",
-      "model": "role",
-      "foreignKey": "person",
-      "through": "roleMember"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

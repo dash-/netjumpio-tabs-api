@@ -25,29 +25,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "parent": {
-      "type": "hasOne",
-      "model": "group",
-      "foreignKey": "children"
-    },
-    "tabsets": {
-      "type": "hasMany",
-      "model": "tabset",
-      "foreignKey": "groupOwner"
-    },
-    "roles": {
-      "type": "hasMany",
-      "model": "role",
-      "foreignKey": "group"
-    },
-    "members": {
-      "type": "hasMany",
-      "model": "person",
-      "foreignKey": "group",
-      "through": "groupMember"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

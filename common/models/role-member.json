@@ -8,13 +8,7 @@
   },
   "properties": {},
   "validations": [],
-  "relations": {
-    "permissions": {
-      "type": "hasMany",
-      "model": "permission",
-      "foreignKey": "role"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

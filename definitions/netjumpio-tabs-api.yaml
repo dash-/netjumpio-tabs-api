@@ -5457,7 +5457,7 @@ info:
   version: 1.0.0
   title: netjumpio-tabs-api
 schemes:
-  - https
+  - http
 host: $(catalog.host)
 consumes:
   - application/json
