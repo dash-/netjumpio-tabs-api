@@ -747,380 +747,6 @@ paths:
                 type: number
                 format: double
       deprecated: false
-  /people:
-    post:
-      tags:
-        - person
-      summary: Create a new instance of the model and persist it into the data source.
-      operationId: person.create
-      parameters:
-        - name: data
-          in: body
-          description: Model instance data
-          required: false
-          schema:
-            description: Model instance data
-            $ref: '#/definitions/person'
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-    put:
-      tags:
-        - person
-      summary: >-
-        Patch an existing model instance or insert a new one into the data
-        source.
-      operationId: person.upsert__put_people
-      parameters:
-        - name: data
-          in: body
-          description: Model instance data
-          required: false
-          schema:
-            description: Model instance data
-            $ref: '#/definitions/person'
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-    patch:
-      tags:
-        - person
-      summary: >-
-        Patch an existing model instance or insert a new one into the data
-        source.
-      operationId: person.upsert__patch_people
-      parameters:
-        - name: data
-          in: body
-          description: Model instance data
-          required: false
-          schema:
-            description: Model instance data
-            $ref: '#/definitions/person'
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-    get:
-      tags:
-        - person
-      summary: Find all instances of the model matched by filter from the data source.
-      operationId: person.find
-      parameters:
-        - name: filter
-          in: query
-          description: 'Filter defining fields, where, include, order, offset, and limit'
-          required: false
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/person'
-      deprecated: false
-  /people/replaceOrCreate:
-    post:
-      tags:
-        - person
-      summary: >-
-        Replace an existing model instance or insert a new one into the data
-        source.
-      operationId: person.replaceOrCreate
-      parameters:
-        - name: data
-          in: body
-          description: Model instance data
-          required: false
-          schema:
-            description: Model instance data
-            $ref: '#/definitions/person'
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-  /people/upsertWithWhere:
-    post:
-      tags:
-        - person
-      summary: >-
-        Update an existing model instance or insert a new one into the data
-        source based on the where criteria.
-      operationId: person.upsertWithWhere
-      parameters:
-        - name: where
-          in: query
-          description: Criteria to match model instances
-          required: false
-          type: string
-          format: JSON
-        - name: data
-          in: body
-          description: An object of model property name/value pairs
-          required: false
-          schema:
-            description: An object of model property name/value pairs
-            $ref: '#/definitions/person'
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-  '/people/{id}/exists':
-    get:
-      tags:
-        - person
-      summary: Check whether a model instance exists in the data source.
-      operationId: 'person.exists__get_people_{id}_exists'
-      parameters:
-        - name: id
-          in: path
-          description: Model id
-          required: true
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            type: object
-            properties:
-              exists:
-                type: boolean
-      deprecated: false
-  '/people/{id}':
-    head:
-      tags:
-        - person
-      summary: Check whether a model instance exists in the data source.
-      operationId: 'person.exists__head_people_{id}'
-      parameters:
-        - name: id
-          in: path
-          description: Model id
-          required: true
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            type: object
-            properties:
-              exists:
-                type: boolean
-      deprecated: false
-    get:
-      tags:
-        - person
-      summary: 'Find a model instance by {{id}} from the data source.'
-      operationId: person.findById
-      parameters:
-        - name: id
-          in: path
-          description: Model id
-          required: true
-          type: string
-          format: JSON
-        - name: filter
-          in: query
-          description: Filter defining fields and include
-          required: false
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-    delete:
-      tags:
-        - person
-      summary: 'Delete a model instance by {{id}} from the data source.'
-      operationId: person.deleteById
-      parameters:
-        - name: id
-          in: path
-          description: Model id
-          required: true
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            type: object
-      deprecated: false
-    put:
-      tags:
-        - person
-      summary: >-
-        Patch attributes for a model instance and persist it into the data
-        source.
-      operationId: 'person.prototype.updateAttributes__put_people_{id}'
-      parameters:
-        - name: data
-          in: body
-          description: An object of model property name/value pairs
-          required: false
-          schema:
-            description: An object of model property name/value pairs
-            $ref: '#/definitions/person'
-        - name: id
-          in: path
-          description: PersistedModel id
-          required: true
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-    patch:
-      tags:
-        - person
-      summary: >-
-        Patch attributes for a model instance and persist it into the data
-        source.
-      operationId: 'person.prototype.updateAttributes__patch_people_{id}'
-      parameters:
-        - name: data
-          in: body
-          description: An object of model property name/value pairs
-          required: false
-          schema:
-            description: An object of model property name/value pairs
-            $ref: '#/definitions/person'
-        - name: id
-          in: path
-          description: PersistedModel id
-          required: true
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-  '/people/{id}/replace':
-    post:
-      tags:
-        - person
-      summary: >-
-        Replace attributes for a model instance and persist it into the data
-        source.
-      operationId: person.replaceById
-      parameters:
-        - name: id
-          in: path
-          description: Model id
-          required: true
-          type: string
-          format: JSON
-        - name: data
-          in: body
-          description: Model instance data
-          required: false
-          schema:
-            description: Model instance data
-            $ref: '#/definitions/person'
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-  /people/findOne:
-    get:
-      tags:
-        - person
-      summary: Find first instance of the model matched by filter from the data source.
-      operationId: person.findOne
-      parameters:
-        - name: filter
-          in: query
-          description: 'Filter defining fields, where, include, order, offset, and limit'
-          required: false
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            $ref: '#/definitions/person'
-      deprecated: false
-  /people/update:
-    post:
-      tags:
-        - person
-      summary: 'Update instances of the model matched by {{where}} from the data source.'
-      operationId: person.updateAll
-      parameters:
-        - name: where
-          in: query
-          description: Criteria to match model instances
-          required: false
-          type: string
-          format: JSON
-        - name: data
-          in: body
-          description: An object of model property name/value pairs
-          required: false
-          schema:
-            description: An object of model property name/value pairs
-            $ref: '#/definitions/person'
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            description: Information related to the outcome of the operation
-            type: object
-            properties:
-              count:
-                description: The number of instances updated
-                type: number
-                format: double
-      deprecated: false
-  /people/count:
-    get:
-      tags:
-        - person
-      summary: Count instances of the model matched by where from the data source.
-      operationId: person.count
-      parameters:
-        - name: where
-          in: query
-          description: Criteria to match model instances
-          required: false
-          type: string
-          format: JSON
-      responses:
-        '200':
-          description: Request was successful
-          schema:
-            type: object
-            properties:
-              count:
-                type: number
-                format: double
-      deprecated: false
   /tabsets:
     post:
       tags:
@@ -2991,9 +2617,466 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  /people:
+    post:
+      tags:
+        - person
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: person.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: person.upsert__put_people
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    patch:
+      tags:
+        - person
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: person.upsert__patch_people
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    get:
+      tags:
+        - person
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: person.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+  /people/replaceOrCreate:
+    post:
+      tags:
+        - person
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: person.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  /people/upsertWithWhere:
+    post:
+      tags:
+        - person
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: person.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/people/{id}/exists':
+    get:
+      tags:
+        - person
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'person.exists__get_people_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/people/{id}':
+    head:
+      tags:
+        - person
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'person.exists__head_people_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - person
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: person.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: person.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'person.prototype.updateAttributes__put_people_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    patch:
+      tags:
+        - person
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'person.prototype.updateAttributes__patch_people_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/people/{id}/replace':
+    post:
+      tags:
+        - person
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: person.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  /people/findOne:
+    get:
+      tags:
+        - person
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: person.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  /people/update:
+    post:
+      tags:
+        - person
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: person.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/person'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /people/count:
+    get:
+      tags:
+        - person
+      summary: Count instances of the model matched by where from the data source.
+      operationId: person.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /people/login:
+    post:
+      tags:
+        - person
+      summary: Login a user with username/email and password.
+      operationId: person.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              The response body contains properties of the AccessToken created
+              on login.
+
+              Depending on the value of `include` parameter, the body may
+              contain additional properties:
+
+                - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
+
+            type: object
+      deprecated: false
+  /people/logout:
+    post:
+      tags:
+        - person
+      summary: Logout a user with access token.
+      operationId: person.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /people/confirm:
+    get:
+      tags:
+        - person
+      summary: Confirm a user registration with email verification token.
+      operationId: person.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /people/reset:
+    post:
+      tags:
+        - person
+      summary: Reset password for a user with email.
+      operationId: person.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
 definitions:
-  x-any:
-    properties: {}
   group:
     properties:
       logoUrl:
@@ -3010,6 +3093,8 @@ definitions:
     required:
       - name
     additionalProperties: false
+  x-any:
+    properties: {}
   role:
     properties:
       logoUrl:
@@ -3025,39 +3110,39 @@ definitions:
     additionalProperties: false
   tabset:
     properties:
+      logoUrl:
+        description: URL of icon image
+        type: string
       name:
         description: Tabset name
         type: string
-      logoUrl:
-        description: URL of icon image
+      cloneOf:
+        description: Id of the tabset this tabset is a clone of
         type: string
       id:
         $ref: '#/definitions/ObjectID'
     required:
       - name
     additionalProperties: false
-  person:
+  roleMember:
     properties:
-      name:
-        description: User's full name
-        type: string
-      logoUrl:
-        description: URL of icon image
-        type: string
       id:
         $ref: '#/definitions/ObjectID'
-    required:
-      - name
     additionalProperties: false
   groupMember:
     properties:
       id:
         $ref: '#/definitions/ObjectID'
     additionalProperties: false
-  roleMember:
+  permission:
     properties:
+      type:
+        description: 'Permission type (eg. READ, WRITE, etc)'
+        type: string
       id:
         $ref: '#/definitions/ObjectID'
+    required:
+      - type
     additionalProperties: false
   tab:
     properties:
@@ -3075,15 +3160,39 @@ definitions:
     required:
       - url
     additionalProperties: false
-  permission:
+  person:
     properties:
-      type:
-        description: 'Permission type (eg. READ, WRITE, etc)'
+      name:
+        description: User's full name
         type: string
+      logoUrl:
+        description: URL of icon image
+        type: string
+      realm:
+        type: string
+      username:
+        type: string
+      credentials:
+        type: object
+      challenges:
+        type: object
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      status:
+        type: string
+      created:
+        type: string
+        format: date
+      lastUpdated:
+        type: string
+        format: date
       id:
         $ref: '#/definitions/ObjectID'
     required:
-      - type
+      - name
+      - email
     additionalProperties: false
   ObjectID:
     type: string

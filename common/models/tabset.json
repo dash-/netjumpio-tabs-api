@@ -7,16 +7,22 @@
     "validateUpsert": true
   },
   "properties": {
+    "logoUrl": {
+      "type": "string",
+      "required": false,
+      "description": "URL of icon image"
+    },
     "name": {
       "type": "string",
       "required": true,
       "index": true,
       "description": "Tabset name"
     },
-    "logoUrl": {
+    "cloneOf": {
       "type": "string",
       "required": false,
-      "description": "URL of icon image"
+      "index": true,
+      "description": "Id of the tabset this tabset is a clone of"
     }
   },
   "validations": [],
