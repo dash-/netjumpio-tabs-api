@@ -1,6 +1,6 @@
 Tabset
 --------------------------------------------------------------------------------
-[ ] tabset -> has -> tabset (Key: cloneOf)
+[ ] tabset -> hasMany -> tabset (Key: clone, FK: cloneOf)
 [ ] tabset -> hasMany -> tab (Key: tabs, FK: tabset)
 
 [ ] tabset -> belongsTo -> person
