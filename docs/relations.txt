@@ -3,6 +3,7 @@ Tabset
 [ ] tabset -> hasMany -> tabset (Key: clones, FK: cloneOf)
 [ ] tabset -> hasMany -> tab (Key: tabs, FK: tabset)
 
+[ ] tabset -> belongsTo -> tabset
 [ ] tabset -> belongsTo -> person
 [ ] tabset -> belongsTo -> group
 [ ] tabset -> belongsTo -> role
