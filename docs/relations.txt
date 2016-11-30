@@ -2,120 +2,116 @@ Tabset
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] cloneOfTabsetId
-[ ] ownerPersonId
-[ ] ownerGroupId
-[ ] ownerRoleId
+[x] cloneOfTabsetId
+[x] ownerPersonId
+[x] ownerGroupId
+[x] ownerRoleId
 
 RELATIONSHIPS
 --------------
-[o] tabset -> hasMany -> tabset (Key: clones, FK: cloneOfTabsetId)
-[o] tabset -> hasMany -> tab (Key: tabs, FK: ownerTabsetId)
+[ ] tabset -> hasMany -> tabset (Key: clones, FK: cloneOfTabsetId)
+[ ] tabset -> hasMany -> tab (Key: tabs, FK: ownerTabsetId)
 
-[o] tabset -> belongsTo -> tabset (Key: cloneOf, FK: cloneOfTabsetId)
-[o] tabset -> belongsTo -> person (Key: owner, FK: ownerPersonId)
-[o] tabset -> belongsTo -> group (Key: group, FK: ownerGroupId)
-[o] tabset -> belongsTo -> role (Key: role, FK: ownerRoleId)
+[ ] tabset -> belongsTo -> tabset (Key: cloneOf, FK: cloneOfTabsetId)
+[ ] tabset -> belongsTo -> person (Key: owner, FK: ownerPersonId)
+[ ] tabset -> belongsTo -> group (Key: group, FK: ownerGroupId)
+[ ] tabset -> belongsTo -> role (Key: role, FK: ownerRoleId)
 
 
 Tab
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] ownerTabsetId
+[x] ownerTabsetId
 
 RELATIONSHIPS
 --------------
-[o] tab -> belongsTo -> tabset (Key: tabset, FK: ownerTabsetId)
+[ ] tab -> belongsTo -> tabset (Key: tabset, FK: ownerTabsetId)
 
 
 Person
 --------------------------------------------------------------------------------
-FOREIGN KEYS
---------------
-[ ] 
-
 RELATIONSHIPS
 --------------
-[o] person -> hasMany -> tabset (Key: tabsets, FK: ownerPersonId)
-[o] person -> hasMany -> person (TT: friendship, Key: friendsFrom, FK: fromPersonId)
-[o] person -> hasMany -> person (TT: friendship, Key: friendsTo, FK: toPersonId)
-[o] person -> hasMany -> group (TT: groupMember, Key: groups, FK: memberPersonId)
-[o] person -> hasMany -> role (TT: roleMember, Key: roles, FK: memberPersonId)
+[ ] person -> hasMany -> tabset (Key: tabsets, FK: ownerPersonId)
+[ ] person -> hasMany -> person (TT: friendship, Key: friendsFrom, FK: fromPersonId)
+[ ] person -> hasMany -> person (TT: friendship, Key: friendsTo, FK: toPersonId)
+[ ] person -> hasMany -> group (TT: groupMember, Key: groups, FK: memberPersonId)
+[ ] person -> hasMany -> role (TT: roleMember, Key: roles, FK: memberPersonId)
 
 
 (TT) Friendship
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] fromPersonId
-[ ] toPersonId
+[x] fromPersonId
+[x] toPersonId
 
 
 Group
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] parentGroupId
+[x] parentGroupId
 
 RELATIONSHIPS
 --------------
-[o] group -> hasMany -> tabset (Key: tabsets, FK: ownerGroupId)
-[o] group -> hasMany -> person (TT: groupMember, Key: members, FK: memberOfGroupId)
-[o] group -> hasMany -> group (Key: children, FK: parentGroupId)
-[o] group -> hasMany -> role (Key: roles, FK: ownerGroupId)
+[ ] group -> hasMany -> tabset (Key: tabsets, FK: ownerGroupId)
+[ ] group -> hasMany -> person (TT: groupMember, Key: members, FK: memberOfGroupId)
+[ ] group -> hasMany -> group (Key: children, FK: parentGroupId)
+[ ] group -> hasMany -> role (Key: roles, FK: ownerGroupId)
 
-[o] group -> belongsTo -> group (Key: parent, FK: parentGroupId)
+[ ] group -> belongsTo -> group (Key: parent, FK: parentGroupId)
 
 
 (TT) Group Member
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] memberPersonId
-[ ] memberOfGroupId
+[x] memberPersonId
+[x] memberOfGroupId
 
 RELATIONSHIPS
 --------------
-[o] groupMember -> hasMany -> permission (Key: permissions, FK: ownerGroupMemberId)
+[ ] groupMember -> hasMany -> permission (Key: permissions, FK: ownerGroupMemberId)
 
 
 Role
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] ownerGroupId
+[x] ownerGroupId
 
 RELATIONSHIPS
 --------------
-[o] role -> hasMany -> tabset (Key: tabsets, FK: ownerRoleId)
-[o] role -> hasMany -> person (TT: roleMember, Key: members, FK: memberOfRoleId)
+[ ] role -> hasMany -> tabset (Key: tabsets, FK: ownerRoleId)
+[ ] role -> hasMany -> person (TT: roleMember, Key: members, FK: memberOfRoleId)
 
-[o] role -> belongsTo -> group (Key: group, FK: ownerGroupId)
+[ ] role -> belongsTo -> group (Key: group, FK: ownerGroupId)
 
 
 (TT) Role Member
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] memberPersonId
-[ ] memberOfRoleId
+[x] memberPersonId
+[x] memberOfRoleId
 
 RELATIONSHIPS
 --------------
-[o] roleMember -> hasMany -> permission (Key: permissions, FK: ownerRoleMemberId)
+[ ] roleMember -> hasMany -> permission (Key: permissions, FK: ownerRoleMemberId)
 
 
 Permission
 --------------------------------------------------------------------------------
 FOREIGN KEYS
 --------------
-[ ] ownerGroupMemberId
-[ ] ownerRoleMemberId
+[x] ownerGroupMemberId
+[x] ownerRoleMemberId
 
 RELATIONSHIPS
 --------------
-[o] permission -> belongsTo -> groupMember (Key: groupMember, FK: ownerGroupMemberId)
-[o] permission -> belongsTo -> roleMember (Key: roleMember, FK: ownerRoleMemberId)
+[ ] permission -> belongsTo -> groupMember (Key: groupMember, FK: ownerGroupMemberId)
+[ ] permission -> belongsTo -> roleMember (Key: roleMember, FK: ownerRoleMemberId)
 
 
