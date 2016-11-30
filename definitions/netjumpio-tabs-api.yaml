@@ -3116,9 +3116,6 @@ definitions:
       name:
         description: Tabset name
         type: string
-      cloneOf:
-        description: Id of the tabset this tabset is a clone of
-        type: string
       id:
         $ref: '#/definitions/ObjectID'
     required:

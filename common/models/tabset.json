@@ -17,12 +17,6 @@
       "required": true,
       "index": true,
       "description": "Tabset name"
-    },
-    "cloneOf": {
-      "type": "string",
-      "required": false,
-      "index": true,
-      "description": "Id of the tabset this tabset is a clone of"
     }
   },
   "validations": [],
