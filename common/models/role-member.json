@@ -6,7 +6,20 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "memberPersonId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of person that is a member of role"
+    },
+    "memberOfRoleId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of role that person is a member of"
+    }
+  },
   "validations": [],
   "relations": {},
   "acls": [],

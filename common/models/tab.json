@@ -7,20 +7,27 @@
     "validateUpsert": true
   },
   "properties": {
+    "logoUrl": {
+      "type": "string",
+      "required": false,
+      "description": "URL of icon image"
+    },
+    "name": {
+      "type": "string",
+      "required": false,
+      "index": false,
+      "description": "Website name"
+    },
     "url": {
       "type": "string",
       "required": true,
       "description": "Tab website"
     },
-    "name": {
+    "ownerTabsetId": {
       "type": "string",
       "required": false,
-      "description": "Website name"
-    },
-    "logoUrl": {
-      "type": "string",
-      "required": false,
-      "description": "URL of icon image"
+      "index": true,
+      "description": "ID of tabset that contains this tab"
     }
   },
   "validations": [],

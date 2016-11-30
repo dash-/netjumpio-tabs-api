@@ -10,7 +10,19 @@
     "type": {
       "type": "string",
       "required": true,
-      "description": "Permission type (eg. READ, WRITE, etc)"
+      "description": "Permission type (eg. READ, WRITE, GRANT, MASTER_READ, etc)"
+    },
+    "ownerGroupMemberId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of group member containing this permission (if applicable)"
+    },
+    "ownerRoleMemberId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of role member containing this permission (if applicable)"
     }
   },
   "validations": [],

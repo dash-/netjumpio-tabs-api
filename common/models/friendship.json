@@ -1,23 +1,24 @@
 {
-  "name": "groupMember",
-  "plural": "groupMembers",
+  "name": "friendship",
+  "plural": "friendships",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "memberPersonId": {
+    "fromPersonId": {
       "type": "string",
+      "id": false,
       "required": true,
       "index": true,
-      "description": "ID of person that is a member of group"
+      "description": "ID of person this friendship is from"
     },
-    "memberOfGroupId": {
+    "toPersonId": {
       "type": "string",
       "required": true,
       "index": true,
-      "description": "ID of group that person is a member of"
+      "description": "ID of person this friendship is to"
     }
   },
   "validations": [],

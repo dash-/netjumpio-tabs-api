@@ -2617,6 +2617,380 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  /friendships:
+    post:
+      tags:
+        - friendship
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: friendship.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/friendship'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+    put:
+      tags:
+        - friendship
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: friendship.upsert__put_friendships
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/friendship'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+    patch:
+      tags:
+        - friendship
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: friendship.upsert__patch_friendships
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/friendship'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+    get:
+      tags:
+        - friendship
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: friendship.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/friendship'
+      deprecated: false
+  /friendships/replaceOrCreate:
+    post:
+      tags:
+        - friendship
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: friendship.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/friendship'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+  /friendships/upsertWithWhere:
+    post:
+      tags:
+        - friendship
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: friendship.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/friendship'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+  '/friendships/{id}/exists':
+    get:
+      tags:
+        - friendship
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'friendship.exists__get_friendships_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/friendships/{id}':
+    head:
+      tags:
+        - friendship
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'friendship.exists__head_friendships_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - friendship
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: friendship.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+    delete:
+      tags:
+        - friendship
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: friendship.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - friendship
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'friendship.prototype.updateAttributes__put_friendships_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/friendship'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+    patch:
+      tags:
+        - friendship
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'friendship.prototype.updateAttributes__patch_friendships_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/friendship'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+  '/friendships/{id}/replace':
+    post:
+      tags:
+        - friendship
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: friendship.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/friendship'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+  /friendships/findOne:
+    get:
+      tags:
+        - friendship
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: friendship.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+  /friendships/update:
+    post:
+      tags:
+        - friendship
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: friendship.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/friendship'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /friendships/count:
+    get:
+      tags:
+        - friendship
+      summary: Count instances of the model matched by where from the data source.
+      operationId: friendship.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /people:
     post:
       tags:
@@ -3088,6 +3462,9 @@ definitions:
       url:
         description: 'Group''s official website, if applicable'
         type: string
+      parentGroupId:
+        description: ID of group that this group is a child of
+        type: string
       id:
         $ref: '#/definitions/ObjectID'
     required:
@@ -3103,6 +3480,9 @@ definitions:
       name:
         description: Role name
         type: string
+      ownerGroupId:
+        description: ID of group that contains role (if applicable)
+        type: string
       id:
         $ref: '#/definitions/ObjectID'
     required:
@@ -3116,6 +3496,18 @@ definitions:
       name:
         description: Tabset name
         type: string
+      cloneOfTabsetid:
+        description: ID of tabset that this tabset is a clone of
+        type: string
+      ownerPersonId:
+        description: ID of person that owns this tabset (if applicable)
+        type: string
+      ownerGroupId:
+        description: ID of group that owns this tabset (if applicable)
+        type: string
+      ownerRoleId:
+        description: ID of role that owns this tabset (if applicable)
+        type: string
       id:
         $ref: '#/definitions/ObjectID'
     required:
@@ -3123,18 +3515,39 @@ definitions:
     additionalProperties: false
   roleMember:
     properties:
+      memberPersonId:
+        description: ID of person that is a member of role
+        type: string
+      memberOfRoleId:
+        description: ID of role that person is a member of
+        type: string
       id:
         $ref: '#/definitions/ObjectID'
     additionalProperties: false
   groupMember:
     properties:
+      memberPersonId:
+        description: ID of person that is a member of group
+        type: string
+      memberOfGroupId:
+        description: ID of group that person is a member of
+        type: string
       id:
         $ref: '#/definitions/ObjectID'
+    required:
+      - memberPersonId
+      - memberOfGroupId
     additionalProperties: false
   permission:
     properties:
       type:
-        description: 'Permission type (eg. READ, WRITE, etc)'
+        description: 'Permission type (eg. READ, WRITE, GRANT, MASTER_READ, etc)'
+        type: string
+      ownerGroupMemberId:
+        description: ID of group member containing this permission (if applicable)
+        type: string
+      ownerRoleMemberId:
+        description: ID of role member containing this permission (if applicable)
         type: string
       id:
         $ref: '#/definitions/ObjectID'
@@ -3143,19 +3556,36 @@ definitions:
     additionalProperties: false
   tab:
     properties:
-      url:
-        description: Tab website
+      logoUrl:
+        description: URL of icon image
         type: string
       name:
         description: Website name
         type: string
-      logoUrl:
-        description: URL of icon image
+      url:
+        description: Tab website
+        type: string
+      ownerTabsetId:
+        description: ID of tabset that contains this tab
         type: string
       id:
         $ref: '#/definitions/ObjectID'
     required:
       - url
+    additionalProperties: false
+  friendship:
+    properties:
+      fromPersonId:
+        description: ID of person this friendship is from
+        type: string
+      toPersonId:
+        description: ID of person this friendship is to
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - fromPersonId
+      - toPersonId
     additionalProperties: false
   person:
     properties:

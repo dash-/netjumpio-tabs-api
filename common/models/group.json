@@ -22,6 +22,12 @@
       "type": "string",
       "required": false,
       "description": "Group's official website, if applicable"
+    },
+    "parentGroupId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of group that this group is a child of"
     }
   },
   "validations": [],

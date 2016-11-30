@@ -44,5 +44,9 @@
   "tab": {
     "dataSource": "Mongo",
     "public": true
+  },
+  "friendship": {
+    "dataSource": "Mongo",
+    "public": true
   }
 }

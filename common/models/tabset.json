@@ -17,6 +17,30 @@
       "required": true,
       "index": true,
       "description": "Tabset name"
+    },
+    "cloneOfTabsetid": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of tabset that this tabset is a clone of"
+    },
+    "ownerPersonId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of person that owns this tabset (if applicable)"
+    },
+    "ownerGroupId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of group that owns this tabset (if applicable)"
+    },
+    "ownerRoleId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of role that owns this tabset (if applicable)"
     }
   },
   "validations": [],

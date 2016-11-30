@@ -17,6 +17,12 @@
       "required": true,
       "index": true,
       "description": "Role name"
+    },
+    "ownerGroupId": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "ID of group that contains role (if applicable)"
     }
   },
   "validations": [],
