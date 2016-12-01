@@ -31,7 +31,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "tabset": {
+      "type": "belongsTo",
+      "model": "tabset",
+      "foreignKey": "ownerTabsetId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

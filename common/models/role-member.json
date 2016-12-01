@@ -21,7 +21,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "permissions": {
+      "type": "hasMany",
+      "model": "permission",
+      "foreignKey": "ownerRoleMemberId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

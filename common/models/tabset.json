@@ -44,7 +44,38 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "clones": {
+      "type": "hasMany",
+      "model": "tabset",
+      "foreignKey": "cloneOfTabsetId"
+    },
+    "tabs": {
+      "type": "hasMany",
+      "model": "tab",
+      "foreignKey": "ownerTabsetId"
+    },
+    "cloneOf": {
+      "type": "belongsTo",
+      "model": "tabset",
+      "foreignKey": "cloneOfTabsetId"
+    },
+    "ownerPerson": {
+      "type": "belongsTo",
+      "model": "person",
+      "foreignKey": "ownerPersonId"
+    },
+    "ownerGroup": {
+      "type": "belongsTo",
+      "model": "group",
+      "foreignKey": "ownerGroupId"
+    },
+    "ownerRole": {
+      "type": "belongsTo",
+      "model": "role",
+      "foreignKey": "ownerRoleId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

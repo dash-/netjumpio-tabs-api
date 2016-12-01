@@ -26,7 +26,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "tabsets": {
+      "type": "hasMany",
+      "model": "tabset",
+      "foreignKey": "ownerRoleId"
+    },
+    "members": {
+      "type": "hasMany",
+      "model": "person",
+      "foreignKey": "memberOfRoleId",
+      "through": "roleMember"
+    },
+    "group": {
+      "type": "belongsTo",
+      "model": "group",
+      "foreignKey": "ownerGroupId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

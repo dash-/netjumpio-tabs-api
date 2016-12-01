@@ -1,4 +1,783 @@
 paths:
+  '/groups/{id}/children/{fk}':
+    get:
+      tags:
+        - group
+      summary: Find a related item by id for children.
+      operationId: group.prototype.__findById__children
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for children
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Delete a related item by id for children.
+      operationId: group.prototype.__destroyById__children
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for children
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update a related item by id for children.
+      operationId: group.prototype.__updateById__children
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for children
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/groups/{id}/parent':
+    get:
+      tags:
+        - group
+      summary: Fetches belongsTo relation parent.
+      operationId: group.prototype.__get__parent
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/groups/{id}/roles/{fk}':
+    get:
+      tags:
+        - group
+      summary: Find a related item by id for roles.
+      operationId: group.prototype.__findById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Delete a related item by id for roles.
+      operationId: group.prototype.__destroyById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update a related item by id for roles.
+      operationId: group.prototype.__updateById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/groups/{id}/tabsets/{fk}':
+    get:
+      tags:
+        - group
+      summary: Find a related item by id for tabsets.
+      operationId: group.prototype.__findById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Delete a related item by id for tabsets.
+      operationId: group.prototype.__destroyById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update a related item by id for tabsets.
+      operationId: group.prototype.__updateById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/groups/{id}/members/{fk}':
+    get:
+      tags:
+        - group
+      summary: Find a related item by id for members.
+      operationId: group.prototype.__findById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Delete a related item by id for members.
+      operationId: group.prototype.__destroyById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - group
+      summary: Update a related item by id for members.
+      operationId: group.prototype.__updateById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/groups/{id}/members/rel/{fk}':
+    put:
+      tags:
+        - group
+      summary: Add a related item by id for members.
+      operationId: group.prototype.__link__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/groupMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Remove the members relation to an item by id.
+      operationId: group.prototype.__unlink__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - group
+      summary: Check the existence of members relation to an item by id.
+      operationId: group.prototype.__exists__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/groups/{id}/children':
+    get:
+      tags:
+        - group
+      summary: Queries children of group.
+      operationId: group.prototype.__get__children
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/group'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in children of this model.
+      operationId: group.prototype.__create__children
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes all children of this model.
+      operationId: group.prototype.__delete__children
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/children/count':
+    get:
+      tags:
+        - group
+      summary: Counts children of group.
+      operationId: group.prototype.__count__children
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/groups/{id}/roles':
+    get:
+      tags:
+        - group
+      summary: Queries roles of group.
+      operationId: group.prototype.__get__roles
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in roles of this model.
+      operationId: group.prototype.__create__roles
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes all roles of this model.
+      operationId: group.prototype.__delete__roles
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/roles/count':
+    get:
+      tags:
+        - group
+      summary: Counts roles of group.
+      operationId: group.prototype.__count__roles
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/groups/{id}/tabsets':
+    get:
+      tags:
+        - group
+      summary: Queries tabsets of group.
+      operationId: group.prototype.__get__tabsets
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in tabsets of this model.
+      operationId: group.prototype.__create__tabsets
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes all tabsets of this model.
+      operationId: group.prototype.__delete__tabsets
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/tabsets/count':
+    get:
+      tags:
+        - group
+      summary: Counts tabsets of group.
+      operationId: group.prototype.__count__tabsets
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/groups/{id}/members':
+    get:
+      tags:
+        - group
+      summary: Queries members of group.
+      operationId: group.prototype.__get__members
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+    post:
+      tags:
+        - group
+      summary: Creates a new instance in members of this model.
+      operationId: group.prototype.__create__members
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - group
+      summary: Deletes all members of this model.
+      operationId: group.prototype.__delete__members
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groups/{id}/members/count':
+    get:
+      tags:
+        - group
+      summary: Counts members of group.
+      operationId: group.prototype.__count__members
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /groups:
     post:
       tags:
@@ -361,6 +1140,445 @@ paths:
           in: query
           description: Criteria to match model instances
           required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/roles/{id}/group':
+    get:
+      tags:
+        - role
+      summary: Fetches belongsTo relation group.
+      operationId: role.prototype.__get__group
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/roles/{id}/tabsets/{fk}':
+    get:
+      tags:
+        - role
+      summary: Find a related item by id for tabsets.
+      operationId: role.prototype.__findById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Delete a related item by id for tabsets.
+      operationId: role.prototype.__destroyById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: Update a related item by id for tabsets.
+      operationId: role.prototype.__updateById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/roles/{id}/members/{fk}':
+    get:
+      tags:
+        - role
+      summary: Find a related item by id for members.
+      operationId: role.prototype.__findById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Delete a related item by id for members.
+      operationId: role.prototype.__destroyById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - role
+      summary: Update a related item by id for members.
+      operationId: role.prototype.__updateById__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/roles/{id}/members/rel/{fk}':
+    put:
+      tags:
+        - role
+      summary: Add a related item by id for members.
+      operationId: role.prototype.__link__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/roleMember'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Remove the members relation to an item by id.
+      operationId: role.prototype.__unlink__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - role
+      summary: Check the existence of members relation to an item by id.
+      operationId: role.prototype.__exists__members
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for members
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/roles/{id}/tabsets':
+    get:
+      tags:
+        - role
+      summary: Queries tabsets of role.
+      operationId: role.prototype.__get__tabsets
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - role
+      summary: Creates a new instance in tabsets of this model.
+      operationId: role.prototype.__create__tabsets
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Deletes all tabsets of this model.
+      operationId: role.prototype.__delete__tabsets
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/roles/{id}/tabsets/count':
+    get:
+      tags:
+        - role
+      summary: Counts tabsets of role.
+      operationId: role.prototype.__count__tabsets
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/roles/{id}/members':
+    get:
+      tags:
+        - role
+      summary: Queries members of role.
+      operationId: role.prototype.__get__members
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+    post:
+      tags:
+        - role
+      summary: Creates a new instance in members of this model.
+      operationId: role.prototype.__create__members
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - role
+      summary: Deletes all members of this model.
+      operationId: role.prototype.__delete__members
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/roles/{id}/members/count':
+    get:
+      tags:
+        - role
+      summary: Counts members of role.
+      operationId: role.prototype.__count__members
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
           type: string
           format: JSON
       responses:
@@ -747,6 +1965,438 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/tabsets/{id}/clones/{fk}':
+    get:
+      tags:
+        - tabset
+      summary: Find a related item by id for clones.
+      operationId: tabset.prototype.__findById__clones
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clones
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: Delete a related item by id for clones.
+      operationId: tabset.prototype.__destroyById__clones
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clones
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - tabset
+      summary: Update a related item by id for clones.
+      operationId: tabset.prototype.__updateById__clones
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clones
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/tabsets/{id}/cloneOf':
+    get:
+      tags:
+        - tabset
+      summary: Fetches belongsTo relation cloneOf.
+      operationId: tabset.prototype.__get__cloneOf
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/tabsets/{id}/ownerGroup':
+    get:
+      tags:
+        - tabset
+      summary: Fetches belongsTo relation ownerGroup.
+      operationId: tabset.prototype.__get__ownerGroup
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/tabsets/{id}/ownerRole':
+    get:
+      tags:
+        - tabset
+      summary: Fetches belongsTo relation ownerRole.
+      operationId: tabset.prototype.__get__ownerRole
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/tabsets/{id}/tabs/{fk}':
+    get:
+      tags:
+        - tabset
+      summary: Find a related item by id for tabs.
+      operationId: tabset.prototype.__findById__tabs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: Delete a related item by id for tabs.
+      operationId: tabset.prototype.__destroyById__tabs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - tabset
+      summary: Update a related item by id for tabs.
+      operationId: tabset.prototype.__updateById__tabs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabs
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tab'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+  '/tabsets/{id}/ownerPerson':
+    get:
+      tags:
+        - tabset
+      summary: Fetches belongsTo relation ownerPerson.
+      operationId: tabset.prototype.__get__ownerPerson
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/tabsets/{id}/clones':
+    get:
+      tags:
+        - tabset
+      summary: Queries clones of tabset.
+      operationId: tabset.prototype.__get__clones
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - tabset
+      summary: Creates a new instance in clones of this model.
+      operationId: tabset.prototype.__create__clones
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: Deletes all clones of this model.
+      operationId: tabset.prototype.__delete__clones
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/tabsets/{id}/clones/count':
+    get:
+      tags:
+        - tabset
+      summary: Counts clones of tabset.
+      operationId: tabset.prototype.__count__clones
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/tabsets/{id}/tabs':
+    get:
+      tags:
+        - tabset
+      summary: Queries tabs of tabset.
+      operationId: tabset.prototype.__get__tabs
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tab'
+      deprecated: false
+    post:
+      tags:
+        - tabset
+      summary: Creates a new instance in tabs of this model.
+      operationId: tabset.prototype.__create__tabs
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tab'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tab'
+      deprecated: false
+    delete:
+      tags:
+        - tabset
+      summary: Deletes all tabs of this model.
+      operationId: tabset.prototype.__delete__tabs
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/tabsets/{id}/tabs/count':
+    get:
+      tags:
+        - tabset
+      summary: Counts tabs of tabset.
+      operationId: tabset.prototype.__count__tabs
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /tabsets:
     post:
       tags:
@@ -1109,6 +2759,176 @@ paths:
           in: query
           description: Criteria to match model instances
           required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/roleMembers/{id}/permissions/{fk}':
+    get:
+      tags:
+        - roleMember
+      summary: Find a related item by id for permissions.
+      operationId: roleMember.prototype.__findById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - roleMember
+      summary: Delete a related item by id for permissions.
+      operationId: roleMember.prototype.__destroyById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - roleMember
+      summary: Update a related item by id for permissions.
+      operationId: roleMember.prototype.__updateById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  '/roleMembers/{id}/permissions':
+    get:
+      tags:
+        - roleMember
+      summary: Queries permissions of roleMember.
+      operationId: roleMember.prototype.__get__permissions
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/permission'
+      deprecated: false
+    post:
+      tags:
+        - roleMember
+      summary: Creates a new instance in permissions of this model.
+      operationId: roleMember.prototype.__create__permissions
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - roleMember
+      summary: Deletes all permissions of this model.
+      operationId: roleMember.prototype.__delete__permissions
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/roleMembers/{id}/permissions/count':
+    get:
+      tags:
+        - roleMember
+      summary: Counts permissions of roleMember.
+      operationId: roleMember.prototype.__count__permissions
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
           type: string
           format: JSON
       responses:
@@ -1495,6 +3315,176 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/groupMembers/{id}/permissions/{fk}':
+    get:
+      tags:
+        - groupMember
+      summary: Find a related item by id for permissions.
+      operationId: groupMember.prototype.__findById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - groupMember
+      summary: Delete a related item by id for permissions.
+      operationId: groupMember.prototype.__destroyById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - groupMember
+      summary: Update a related item by id for permissions.
+      operationId: groupMember.prototype.__updateById__permissions
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for permissions
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+  '/groupMembers/{id}/permissions':
+    get:
+      tags:
+        - groupMember
+      summary: Queries permissions of groupMember.
+      operationId: groupMember.prototype.__get__permissions
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/permission'
+      deprecated: false
+    post:
+      tags:
+        - groupMember
+      summary: Creates a new instance in permissions of this model.
+      operationId: groupMember.prototype.__create__permissions
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/permission'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/permission'
+      deprecated: false
+    delete:
+      tags:
+        - groupMember
+      summary: Deletes all permissions of this model.
+      operationId: groupMember.prototype.__delete__permissions
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/groupMembers/{id}/permissions/count':
+    get:
+      tags:
+        - groupMember
+      summary: Counts permissions of groupMember.
+      operationId: groupMember.prototype.__count__permissions
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /groupMembers:
     post:
       tags:
@@ -1869,6 +3859,52 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/permissions/{id}/groupMember':
+    get:
+      tags:
+        - permission
+      summary: Fetches belongsTo relation groupMember.
+      operationId: permission.prototype.__get__groupMember
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+  '/permissions/{id}/roleMember':
+    get:
+      tags:
+        - permission
+      summary: Fetches belongsTo relation roleMember.
+      operationId: permission.prototype.__get__roleMember
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
   /permissions:
     post:
       tags:
@@ -2242,6 +4278,29 @@ paths:
               count:
                 type: number
                 format: double
+      deprecated: false
+  '/tabs/{id}/tabset':
+    get:
+      tags:
+        - tab
+      summary: Fetches belongsTo relation tabset.
+      operationId: tab.prototype.__get__tabset
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
       deprecated: false
   /tabs:
     post:
@@ -2991,6 +5050,1160 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/people/{id}/tabsets/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for tabsets.
+      operationId: person.prototype.__findById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for tabsets.
+      operationId: person.prototype.__destroyById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for tabsets.
+      operationId: person.prototype.__updateById__tabsets
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for tabsets
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+  '/people/{id}/friendsFrom/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for friendsFrom.
+      operationId: person.prototype.__findById__friendsFrom
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsFrom
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for friendsFrom.
+      operationId: person.prototype.__destroyById__friendsFrom
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsFrom
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for friendsFrom.
+      operationId: person.prototype.__updateById__friendsFrom
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsFrom
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/people/{id}/friendsFrom/rel/{fk}':
+    put:
+      tags:
+        - person
+      summary: Add a related item by id for friendsFrom.
+      operationId: person.prototype.__link__friendsFrom
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsFrom
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/friendship'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Remove the friendsFrom relation to an item by id.
+      operationId: person.prototype.__unlink__friendsFrom
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsFrom
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - person
+      summary: Check the existence of friendsFrom relation to an item by id.
+      operationId: person.prototype.__exists__friendsFrom
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsFrom
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/people/{id}/friendsTo/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for friendsTo.
+      operationId: person.prototype.__findById__friendsTo
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsTo
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for friendsTo.
+      operationId: person.prototype.__destroyById__friendsTo
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsTo
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for friendsTo.
+      operationId: person.prototype.__updateById__friendsTo
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsTo
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/people/{id}/friendsTo/rel/{fk}':
+    put:
+      tags:
+        - person
+      summary: Add a related item by id for friendsTo.
+      operationId: person.prototype.__link__friendsTo
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsTo
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/friendship'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/friendship'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Remove the friendsTo relation to an item by id.
+      operationId: person.prototype.__unlink__friendsTo
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsTo
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - person
+      summary: Check the existence of friendsTo relation to an item by id.
+      operationId: person.prototype.__exists__friendsTo
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for friendsTo
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/people/{id}/groups/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for groups.
+      operationId: person.prototype.__findById__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for groups.
+      operationId: person.prototype.__destroyById__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for groups.
+      operationId: person.prototype.__updateById__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+  '/people/{id}/groups/rel/{fk}':
+    put:
+      tags:
+        - person
+      summary: Add a related item by id for groups.
+      operationId: person.prototype.__link__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/groupMember'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/groupMember'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Remove the groups relation to an item by id.
+      operationId: person.prototype.__unlink__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - person
+      summary: Check the existence of groups relation to an item by id.
+      operationId: person.prototype.__exists__groups
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for groups
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/people/{id}/roles/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for roles.
+      operationId: person.prototype.__findById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for roles.
+      operationId: person.prototype.__destroyById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for roles.
+      operationId: person.prototype.__updateById__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+  '/people/{id}/roles/rel/{fk}':
+    put:
+      tags:
+        - person
+      summary: Add a related item by id for roles.
+      operationId: person.prototype.__link__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/roleMember'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/roleMember'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Remove the roles relation to an item by id.
+      operationId: person.prototype.__unlink__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - person
+      summary: Check the existence of roles relation to an item by id.
+      operationId: person.prototype.__exists__roles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for roles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/people/{id}/tabsets':
+    get:
+      tags:
+        - person
+      summary: Queries tabsets of person.
+      operationId: person.prototype.__get__tabsets
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tabset'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in tabsets of this model.
+      operationId: person.prototype.__create__tabsets
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/tabset'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/tabset'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all tabsets of this model.
+      operationId: person.prototype.__delete__tabsets
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/tabsets/count':
+    get:
+      tags:
+        - person
+      summary: Counts tabsets of person.
+      operationId: person.prototype.__count__tabsets
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/friendsFrom':
+    get:
+      tags:
+        - person
+      summary: Queries friendsFrom of person.
+      operationId: person.prototype.__get__friendsFrom
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in friendsFrom of this model.
+      operationId: person.prototype.__create__friendsFrom
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all friendsFrom of this model.
+      operationId: person.prototype.__delete__friendsFrom
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/friendsFrom/count':
+    get:
+      tags:
+        - person
+      summary: Counts friendsFrom of person.
+      operationId: person.prototype.__count__friendsFrom
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/friendsTo':
+    get:
+      tags:
+        - person
+      summary: Queries friendsTo of person.
+      operationId: person.prototype.__get__friendsTo
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/person'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in friendsTo of this model.
+      operationId: person.prototype.__create__friendsTo
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/person'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all friendsTo of this model.
+      operationId: person.prototype.__delete__friendsTo
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/friendsTo/count':
+    get:
+      tags:
+        - person
+      summary: Counts friendsTo of person.
+      operationId: person.prototype.__count__friendsTo
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/groups':
+    get:
+      tags:
+        - person
+      summary: Queries groups of person.
+      operationId: person.prototype.__get__groups
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/group'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in groups of this model.
+      operationId: person.prototype.__create__groups
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/group'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all groups of this model.
+      operationId: person.prototype.__delete__groups
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/groups/count':
+    get:
+      tags:
+        - person
+      summary: Counts groups of person.
+      operationId: person.prototype.__count__groups
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/roles':
+    get:
+      tags:
+        - person
+      summary: Queries roles of person.
+      operationId: person.prototype.__get__roles
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/role'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in roles of this model.
+      operationId: person.prototype.__create__roles
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/role'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all roles of this model.
+      operationId: person.prototype.__delete__roles
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/roles/count':
+    get:
+      tags:
+        - person
+      summary: Counts roles of person.
+      operationId: person.prototype.__count__roles
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /people:
     post:
       tags:
@@ -3451,6 +6664,8 @@ paths:
           description: Request was successful
       deprecated: false
 definitions:
+  x-any:
+    properties: {}
   group:
     properties:
       logoUrl:
@@ -3464,14 +6679,12 @@ definitions:
         type: string
       parentGroupId:
         description: ID of group that this group is a child of
-        type: string
+        $ref: '#/definitions/ObjectID'
       id:
         $ref: '#/definitions/ObjectID'
     required:
       - name
     additionalProperties: false
-  x-any:
-    properties: {}
   role:
     properties:
       logoUrl:
@@ -3482,7 +6695,7 @@ definitions:
         type: string
       ownerGroupId:
         description: ID of group that contains role (if applicable)
-        type: string
+        $ref: '#/definitions/ObjectID'
       id:
         $ref: '#/definitions/ObjectID'
     required:
@@ -3501,91 +6714,19 @@ definitions:
         type: string
       ownerPersonId:
         description: ID of person that owns this tabset (if applicable)
-        type: string
+        $ref: '#/definitions/ObjectID'
       ownerGroupId:
         description: ID of group that owns this tabset (if applicable)
-        type: string
+        $ref: '#/definitions/ObjectID'
       ownerRoleId:
         description: ID of role that owns this tabset (if applicable)
-        type: string
+        $ref: '#/definitions/ObjectID'
       id:
+        $ref: '#/definitions/ObjectID'
+      cloneOfTabsetId:
         $ref: '#/definitions/ObjectID'
     required:
       - name
-    additionalProperties: false
-  roleMember:
-    properties:
-      memberPersonId:
-        description: ID of person that is a member of role
-        type: string
-      memberOfRoleId:
-        description: ID of role that person is a member of
-        type: string
-      id:
-        $ref: '#/definitions/ObjectID'
-    additionalProperties: false
-  groupMember:
-    properties:
-      memberPersonId:
-        description: ID of person that is a member of group
-        type: string
-      memberOfGroupId:
-        description: ID of group that person is a member of
-        type: string
-      id:
-        $ref: '#/definitions/ObjectID'
-    required:
-      - memberPersonId
-      - memberOfGroupId
-    additionalProperties: false
-  permission:
-    properties:
-      type:
-        description: 'Permission type (eg. READ, WRITE, GRANT, MASTER_READ, etc)'
-        type: string
-      ownerGroupMemberId:
-        description: ID of group member containing this permission (if applicable)
-        type: string
-      ownerRoleMemberId:
-        description: ID of role member containing this permission (if applicable)
-        type: string
-      id:
-        $ref: '#/definitions/ObjectID'
-    required:
-      - type
-    additionalProperties: false
-  tab:
-    properties:
-      logoUrl:
-        description: URL of icon image
-        type: string
-      name:
-        description: Website name
-        type: string
-      url:
-        description: Tab website
-        type: string
-      ownerTabsetId:
-        description: ID of tabset that contains this tab
-        type: string
-      id:
-        $ref: '#/definitions/ObjectID'
-    required:
-      - url
-    additionalProperties: false
-  friendship:
-    properties:
-      fromPersonId:
-        description: ID of person this friendship is from
-        type: string
-      toPersonId:
-        description: ID of person this friendship is to
-        type: string
-      id:
-        $ref: '#/definitions/ObjectID'
-    required:
-      - fromPersonId
-      - toPersonId
     additionalProperties: false
   person:
     properties:
@@ -3620,6 +6761,80 @@ definitions:
     required:
       - name
       - email
+    additionalProperties: false
+  groupMember:
+    properties:
+      memberPersonId:
+        description: ID of person that is a member of group
+        type: string
+      memberOfGroupId:
+        description: ID of group that person is a member of
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - memberPersonId
+      - memberOfGroupId
+    additionalProperties: false
+  roleMember:
+    properties:
+      memberPersonId:
+        description: ID of person that is a member of role
+        type: string
+      memberOfRoleId:
+        description: ID of role that person is a member of
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    additionalProperties: false
+  tab:
+    properties:
+      logoUrl:
+        description: URL of icon image
+        type: string
+      name:
+        description: Website name
+        type: string
+      url:
+        description: Tab website
+        type: string
+      ownerTabsetId:
+        description: ID of tabset that contains this tab
+        $ref: '#/definitions/ObjectID'
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - url
+    additionalProperties: false
+  permission:
+    properties:
+      type:
+        description: 'Permission type (eg. READ, WRITE, GRANT, MASTER_READ, etc)'
+        type: string
+      ownerGroupMemberId:
+        description: ID of group member containing this permission (if applicable)
+        $ref: '#/definitions/ObjectID'
+      ownerRoleMemberId:
+        description: ID of role member containing this permission (if applicable)
+        $ref: '#/definitions/ObjectID'
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - type
+    additionalProperties: false
+  friendship:
+    properties:
+      fromPersonId:
+        description: ID of person this friendship is from
+        type: string
+      toPersonId:
+        description: ID of person this friendship is to
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - fromPersonId
+      - toPersonId
     additionalProperties: false
   ObjectID:
     type: string

@@ -31,7 +31,34 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "tabsets": {
+      "type": "hasMany",
+      "model": "tabset",
+      "foreignKey": "ownerGroupId"
+    },
+    "members": {
+      "type": "hasMany",
+      "model": "person",
+      "foreignKey": "memberOfGroupId",
+      "through": "groupMember"
+    },
+    "children": {
+      "type": "hasMany",
+      "model": "group",
+      "foreignKey": "parentGroupId"
+    },
+    "roles": {
+      "type": "hasMany",
+      "model": "role",
+      "foreignKey": "ownerGroupId"
+    },
+    "parent": {
+      "type": "belongsTo",
+      "model": "group",
+      "foreignKey": "parentGroupId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

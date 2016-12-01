@@ -26,7 +26,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "groupMember": {
+      "type": "belongsTo",
+      "model": "groupMember",
+      "foreignKey": "ownerGroupMemberId"
+    },
+    "roleMember": {
+      "type": "belongsTo",
+      "model": "roleMember",
+      "foreignKey": "ownerRoleMemberId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

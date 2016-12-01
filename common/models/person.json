@@ -20,7 +20,37 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "tabsets": {
+      "type": "hasMany",
+      "model": "tabset",
+      "foreignKey": "ownerPersonId"
+    },
+    "friendsFrom": {
+      "type": "hasMany",
+      "model": "person",
+      "foreignKey": "fromPersonId",
+      "through": "friendship"
+    },
+    "friendsTo": {
+      "type": "hasMany",
+      "model": "person",
+      "foreignKey": "toPersonId",
+      "through": "friendship"
+    },
+    "groups": {
+      "type": "hasMany",
+      "model": "group",
+      "foreignKey": "memberPersonId",
+      "through": "groupMember"
+    },
+    "roles": {
+      "type": "hasMany",
+      "model": "role",
+      "foreignKey": "memberPersonId",
+      "through": "roleMember"
+    }
+  },
   "acls": [],
   "methods": {}
 }
