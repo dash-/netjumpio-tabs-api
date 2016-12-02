@@ -48,5 +48,16 @@
   "friendship": {
     "dataSource": "Mongo",
     "public": true
-  }
+  },
+  "AccessToken": {
+  	"#": "@see https://github.com/strongloop/loopback/issues/175",
+    "dataSource": "Mongo",
+    "public": false,
+    "strict": true
+	},
+	"ACL": {
+    "dataSource": "Mongo",
+    "public": false,
+    "strict": true
+	}
 }
