@@ -2771,6 +2771,29 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/roleMembers/{id}/role':
+    get:
+      tags:
+        - roleMember
+      summary: Fetches belongsTo relation role.
+      operationId: roleMember.prototype.__get__role
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/role'
+      deprecated: false
   '/roleMembers/{id}/permissions/{fk}':
     get:
       tags:
@@ -2846,6 +2869,29 @@ paths:
           description: Request was successful
           schema:
             $ref: '#/definitions/permission'
+      deprecated: false
+  '/roleMembers/{id}/person':
+    get:
+      tags:
+        - roleMember
+      summary: Fetches belongsTo relation person.
+      operationId: roleMember.prototype.__get__person
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
       deprecated: false
   '/roleMembers/{id}/permissions':
     get:
@@ -7042,10 +7088,10 @@ definitions:
     properties:
       memberPersonId:
         description: ID of person that is a member of role
-        type: string
+        $ref: '#/definitions/ObjectID'
       memberOfRoleId:
         description: ID of role that person is a member of
-        type: string
+        $ref: '#/definitions/ObjectID'
       id:
         $ref: '#/definitions/ObjectID'
     additionalProperties: false

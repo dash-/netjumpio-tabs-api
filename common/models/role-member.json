@@ -26,6 +26,16 @@
       "type": "hasMany",
       "model": "permission",
       "foreignKey": "ownerRoleMemberId"
+    },
+    "role": {
+      "type": "belongsTo",
+      "model": "role",
+      "foreignKey": "memberOfRoleId"
+    },
+    "person": {
+      "type": "belongsTo",
+      "model": "person",
+      "foreignKey": "memberPersonId"
     }
   },
   "acls": [],

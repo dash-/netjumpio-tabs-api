@@ -109,8 +109,8 @@ RELATIONSHIPS
 --------------
 [x] roleMember -> hasMany -> permission (Key: permissions, FK: ownerRoleMemberId)
 
-[ ] roleMember -> belongsTo -> role (Key: role, FK: memberOfRoleId)
-[ ] roleMember -> belongsTo -> person (Key: person, FK: memberPersonId)
+[x] roleMember -> belongsTo -> role (Key: role, FK: memberOfRoleId)
+[x] roleMember -> belongsTo -> person (Key: person, FK: memberPersonId)
 
 
 Permission
