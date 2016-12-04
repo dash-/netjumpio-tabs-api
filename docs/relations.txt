@@ -49,8 +49,8 @@ FOREIGN KEYS
 
 RELATIONSHIPS
 --------------
-[ ] friendship -> belongsTo -> person (Key: friendsFrom, FK: fromPersonId)
-[ ] friendship -> belongsTo -> person (Key: friendsTo, FK: toPersonId)
+[x] friendship -> belongsTo -> person (Key: friendsFrom, FK: fromPersonId)
+[x] friendship -> belongsTo -> person (Key: friendsTo, FK: toPersonId)
 
 
 Group

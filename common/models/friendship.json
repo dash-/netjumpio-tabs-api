@@ -22,7 +22,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "friendsFrom": {
+      "type": "belongsTo",
+      "model": "person",
+      "foreignKey": "fromPersonId"
+    },
+    "friendsTo": {
+      "type": "belongsTo",
+      "model": "person",
+      "foreignKey": "toPersonId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -4676,6 +4676,52 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/friendships/{id}/friendsFrom':
+    get:
+      tags:
+        - friendship
+      summary: Fetches belongsTo relation friendsFrom.
+      operationId: friendship.prototype.__get__friendsFrom
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
+  '/friendships/{id}/friendsTo':
+    get:
+      tags:
+        - friendship
+      summary: Fetches belongsTo relation friendsTo.
+      operationId: friendship.prototype.__get__friendsTo
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
+      deprecated: false
   /friendships:
     post:
       tags:
@@ -5734,6 +5780,82 @@ paths:
           schema:
             type: boolean
       deprecated: false
+  '/people/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - person
+      summary: Find a related item by id for accessTokens.
+      operationId: person.prototype.__findById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Delete a related item by id for accessTokens.
+      operationId: person.prototype.__destroyById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - person
+      summary: Update a related item by id for accessTokens.
+      operationId: person.prototype.__updateById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
   '/people/{id}/tabsets':
     get:
       tags:
@@ -6181,6 +6303,100 @@ paths:
         - person
       summary: Counts roles of person.
       operationId: person.prototype.__count__roles
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/people/{id}/accessTokens':
+    get:
+      tags:
+        - person
+      summary: Queries accessTokens of person.
+      operationId: person.prototype.__get__accessTokens
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+      deprecated: false
+    post:
+      tags:
+        - person
+      summary: Creates a new instance in accessTokens of this model.
+      operationId: person.prototype.__create__accessTokens
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - person
+      summary: Deletes all accessTokens of this model.
+      operationId: person.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/people/{id}/accessTokens/count':
+    get:
+      tags:
+        - person
+      summary: Counts accessTokens of person.
+      operationId: person.prototype.__count__accessTokens
       parameters:
         - name: where
           in: query
@@ -6826,15 +7042,32 @@ definitions:
     properties:
       fromPersonId:
         description: ID of person this friendship is from
-        type: string
+        $ref: '#/definitions/ObjectID'
       toPersonId:
         description: ID of person this friendship is to
-        type: string
+        $ref: '#/definitions/ObjectID'
       id:
         $ref: '#/definitions/ObjectID'
     required:
       - fromPersonId
       - toPersonId
+    additionalProperties: false
+  AccessToken:
+    properties:
+      id:
+        type: string
+      ttl:
+        default: 1209600
+        description: time to live in seconds (2 weeks by default)
+        type: number
+        format: double
+      created:
+        type: string
+        format: date
+      userId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - id
     additionalProperties: false
   ObjectID:
     type: string
