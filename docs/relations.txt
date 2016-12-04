@@ -47,6 +47,11 @@ FOREIGN KEYS
 [x] fromPersonId
 [x] toPersonId
 
+RELATIONSHIPS
+--------------
+[ ] friendship -> belongsTo -> person (Key: friendsFrom, FK: fromPersonId)
+[ ] friendship -> belongsTo -> person (Key: friendsTo, FK: toPersonId)
+
 
 Group
 --------------------------------------------------------------------------------
@@ -75,6 +80,9 @@ RELATIONSHIPS
 --------------
 [x] groupMember -> hasMany -> permission (Key: permissions, FK: ownerGroupMemberId)
 
+[ ] groupMember -> belongsTo -> group (Key: group, FK: memberOfGroupId)
+[ ] groupMember -> belongsTo -> person (Key: person, FK: memberPersonId)
+
 
 Role
 --------------------------------------------------------------------------------
@@ -100,6 +108,9 @@ FOREIGN KEYS
 RELATIONSHIPS
 --------------
 [x] roleMember -> hasMany -> permission (Key: permissions, FK: ownerRoleMemberId)
+
+[ ] roleMember -> belongsTo -> role (Key: role, FK: memberOfRoleId)
+[ ] roleMember -> belongsTo -> person (Key: person, FK: memberPersonId)
 
 
 Permission
