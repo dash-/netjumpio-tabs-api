@@ -3315,6 +3315,29 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/groupMembers/{id}/group':
+    get:
+      tags:
+        - groupMember
+      summary: Fetches belongsTo relation group.
+      operationId: groupMember.prototype.__get__group
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/group'
+      deprecated: false
   '/groupMembers/{id}/permissions/{fk}':
     get:
       tags:
@@ -3390,6 +3413,29 @@ paths:
           description: Request was successful
           schema:
             $ref: '#/definitions/permission'
+      deprecated: false
+  '/groupMembers/{id}/person':
+    get:
+      tags:
+        - groupMember
+      summary: Fetches belongsTo relation person.
+      operationId: groupMember.prototype.__get__person
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/person'
       deprecated: false
   '/groupMembers/{id}/permissions':
     get:
@@ -6982,10 +7028,10 @@ definitions:
     properties:
       memberPersonId:
         description: ID of person that is a member of group
-        type: string
+        $ref: '#/definitions/ObjectID'
       memberOfGroupId:
         description: ID of group that person is a member of
-        type: string
+        $ref: '#/definitions/ObjectID'
       id:
         $ref: '#/definitions/ObjectID'
     required:

@@ -80,8 +80,8 @@ RELATIONSHIPS
 --------------
 [x] groupMember -> hasMany -> permission (Key: permissions, FK: ownerGroupMemberId)
 
-[ ] groupMember -> belongsTo -> group (Key: group, FK: memberOfGroupId)
-[ ] groupMember -> belongsTo -> person (Key: person, FK: memberPersonId)
+[x] groupMember -> belongsTo -> group (Key: group, FK: memberOfGroupId)
+[x] groupMember -> belongsTo -> person (Key: person, FK: memberPersonId)
 
 
 Role
