@@ -55,7 +55,33 @@ module.exports = function initAdminUsers(app) {
 	}
 
 	function addNewAdminUsers(scope) {
-		const promises = scope.newAdminUsers.map(Person.create);
+		// This single line of code is preferable, but is believed to cause a bug
+		// in some systems, related to:
+		//
+		// * https://github.com/strongloop/loopback-datasource-juggler/issues/936
+		// * https://github.com/strongloop/loopback/issues/2164
+		//
+		// <PREFERABLE CODE>
+		//   const promises = scope.newAdminUsers.map(Person.create);
+		// </PREFERABLE CODE>
+		//
+		// As such, until a fix is published, the following section using callbacks
+		// will suffice:
+
+		// <ALTERNATE CODE>
+		const promises = [];
+		scope.newAdminUsers.map(newUser => {
+			promises.push(new Promise((resolve, reject) => {
+				Person.create(newUser, (err, addedUser) => {
+					if(err) {
+						return reject(err);
+					} else {
+						return resolve(addedUser);
+					}
+				});
+			}));
+		});
+		// </ALTERNATE CODE>
 
 		Promise.all(promises).then(addedUsers => {
 			scope = _.assign({}, scope, {newAdminUsers: addedUsers});
@@ -63,7 +89,14 @@ module.exports = function initAdminUsers(app) {
 	}
 
 	function getOrCreateAdminRole(scope) {
-		return Role.create({name: 'admin'}).then(role => {
+		const adminRole = {name: 'admin'};
+		return Role.find({where: adminRole}).then(existingRole => {
+			if(existingRole) {
+				return existingRole;
+			}
+			return Role.create(adminRole);
+
+		}).then(role => {
 			scope = _.assign({}, scope, {adminRole: role});
 		}).then(() => scope);
 	}
