@@ -41,7 +41,8 @@
       "type": "hasMany",
       "model": "person",
       "foreignKey": "memberOfGroupId",
-      "through": "groupMember"
+      "through": "groupMember",
+      "keyThrough": "memberPersonId"
     },
     "children": {
       "type": "hasMany",

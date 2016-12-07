@@ -30,25 +30,29 @@
       "type": "hasMany",
       "model": "person",
       "foreignKey": "fromPersonId",
-      "through": "friendship"
+      "through": "friendship",
+      "keyThrough": "toPersonId"
     },
     "friendsTo": {
       "type": "hasMany",
       "model": "person",
       "foreignKey": "toPersonId",
-      "through": "friendship"
+      "through": "friendship",
+      "keyThrough": "fromPersonId"
     },
     "groups": {
       "type": "hasMany",
       "model": "group",
       "foreignKey": "memberPersonId",
-      "through": "groupMember"
+      "through": "groupMember",
+      "keyThrough": "memberOfGroupId"
     },
     "roles": {
       "type": "hasMany",
       "model": "role",
       "foreignKey": "memberPersonId",
-      "through": "roleMember"
+      "through": "roleMember",
+      "keyThrough": "memberOfRoleId"
     }
   },
   "acls": [],

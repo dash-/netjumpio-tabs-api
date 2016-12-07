@@ -36,7 +36,8 @@
       "type": "hasMany",
       "model": "person",
       "foreignKey": "memberOfRoleId",
-      "through": "roleMember"
+      "through": "roleMember",
+      "keyThrough": "memberPersonId"
     },
     "group": {
       "type": "belongsTo",
