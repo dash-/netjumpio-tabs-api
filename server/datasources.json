@@ -1,8 +1,8 @@
 {
-  "Mongo": {
+  "db": {
     "host": "127.0.0.1",
     "database": "netjumpio_tabs",
-    "name": "Mongo",
+    "name": "db",
     "connector": "mongodb"
   }
 }

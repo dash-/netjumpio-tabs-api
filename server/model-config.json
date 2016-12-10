@@ -14,49 +14,49 @@
     ]
   },
   "group": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "role": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "person": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "tabset": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "roleMember": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "groupMember": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "permission": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "tab": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "friendship": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": true
   },
   "AccessToken": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": false,
     "#": "@see https://github.com/strongloop/loopback/issues/175",
     "strict": true
   },
   "ACL": {
-    "dataSource": "Mongo",
+    "dataSource": "db",
     "public": false,
     "strict": true
   }
