@@ -55,6 +55,7 @@
       "keyThrough": "memberOfRoleId"
     }
   },
+  "mixins": { },
   "acls": [],
   "methods": {}
 }

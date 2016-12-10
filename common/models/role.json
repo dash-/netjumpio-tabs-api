@@ -45,6 +45,7 @@
       "foreignKey": "ownerGroupId"
     }
   },
+  "mixins": { },
   "acls": [],
   "methods": {}
 }

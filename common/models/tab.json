@@ -38,6 +38,7 @@
       "foreignKey": "ownerTabsetId"
     }
   },
+  "mixins": { },
   "acls": [],
   "methods": {}
 }

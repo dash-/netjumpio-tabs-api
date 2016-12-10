@@ -60,6 +60,7 @@
       "foreignKey": "parentGroupId"
     }
   },
+  "mixins": { },
   "acls": [],
   "methods": {}
 }

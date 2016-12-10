@@ -38,6 +38,7 @@
       "foreignKey": "ownerRoleMemberId"
     }
   },
+  "mixins": { },
   "acls": [],
   "methods": {}
 }

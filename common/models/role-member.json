@@ -38,6 +38,7 @@
       "foreignKey": "memberPersonId"
     }
   },
+  "mixins": { },
   "acls": [],
   "methods": {}
 }

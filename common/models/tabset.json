@@ -76,6 +76,7 @@
       "foreignKey": "ownerRoleId"
     }
   },
+  "mixins": { },
   "acls": [],
   "methods": {}
 }
