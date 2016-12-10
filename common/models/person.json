@@ -55,7 +55,9 @@
       "keyThrough": "memberOfRoleId"
     }
   },
-  "mixins": { },
+  "mixins": {
+  	"SoftDelete": true
+  },
   "acls": [],
   "methods": {}
 }

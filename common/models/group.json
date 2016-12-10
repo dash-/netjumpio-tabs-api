@@ -60,7 +60,9 @@
       "foreignKey": "parentGroupId"
     }
   },
-  "mixins": { },
+  "mixins": {
+  	"SoftDelete": true
+  },
   "acls": [],
   "methods": {}
 }

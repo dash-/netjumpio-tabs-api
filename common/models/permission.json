@@ -38,7 +38,9 @@
       "foreignKey": "ownerRoleMemberId"
     }
   },
-  "mixins": { },
+  "mixins": {
+  	"SoftDelete": true
+  },
   "acls": [],
   "methods": {}
 }
