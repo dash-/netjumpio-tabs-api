@@ -78,6 +78,8 @@ function softDelete(Model, options) {
 	Model.update = update;
 	Model.updateAll = update;
 
+	Model.restore = restore;
+
 
 	///
 	// Mixin methods
@@ -135,6 +137,36 @@ function softDelete(Model, options) {
 
 		return saved.update.apply(Model, args);
 	}
+
+	function restore(id) {
+		return saved.update.call(Model, {id: id}, {
+			[delAtField]: null,
+			[isDelField]: false,
+		}).then(result => {
+			if(! result.count) {
+				throw new Error('Could not restore data');
+			}
+			return Model.findById(id);
+		});
+	}
+
+
+	///
+	// Remote method registration
+	///
+
+	Model.remoteMethod('restore', {
+		http: {path: '/:id/restore', verb: 'put'},
+		accepts: {
+			arg: 'id',
+			type: 'string',
+			http: { source: 'path' },
+		},
+		returns: {
+			type: 'object',
+			root: true,
+		},
+	});
 
 
 	///
