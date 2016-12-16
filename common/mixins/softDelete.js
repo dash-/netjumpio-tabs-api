@@ -156,7 +156,7 @@ function softDelete(Model, options) {
 	///
 
 	Model.remoteMethod('restore', {
-		http: {path: '/:id/restore', verb: 'put'},
+		http: {path: '/:id/restore', verb: 'post'},
 		accepts: {
 			arg: 'id',
 			type: 'string',
