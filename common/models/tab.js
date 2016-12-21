@@ -9,6 +9,7 @@ var path = require('path');
 var urlParser = require('url');
 var rp = require('request-promise');
 var cheerio = require('cheerio');
+var assign = require('lodash/assign');
 
 
 ///
@@ -29,13 +30,32 @@ const config = {
 
 module.exports = function(Tab) {
 	Tab.webpage = function(url) {
-		return rp(buildRPOptions(url)).then((data) => {
-			return processPage(url, data);
-		}).catch((err) => {
+		let scope = {};
+
+		return Promise.resolve().then(() => {
+			const processedUrl = processUrl(
+				urlParser.parse(url, false, true)
+			)
+
+			if(isInvalidUrl(processedUrl)) {
+				throw new Error(
+					'Invalid url: ' + urlParser.format(processedUrl)
+				);
+			}
+
+			return scope.url = urlParser.format(processedUrl);
+
+		}).then(url => {
+			return rp(buildRPOptions(url));
+
+		}).then(data => {
+			return processPage(scope.url, data);
+
+		}).catch(err => {
 			return {
 				logoUrl: '',
 				name: '',
-				url: url,
+				url: scope.url,
 			};
 		});
 	};
@@ -51,6 +71,25 @@ module.exports = function(Tab) {
 ///
 // Helpers
 ///
+
+function processUrl(urlObject) {
+	if(urlObject.path && ! urlObject.host ) {
+		const parts = urlObject.path.split('/', 2);
+		urlObject.host = parts[0];
+		urlObject.path = parts[1] ? '/' + parts[1] : '';
+		urlObject.pathname = urlObject.path;
+	}
+
+	if(! urlObject.protocol) {
+		urlObject = assign({}, urlObject, {protocol: 'http:'});
+	}
+
+	return urlObject;
+}
+
+function isInvalidUrl(urlObject) {
+	return ! (urlObject.protocol && urlObject.host);
+}
 
 function buildRPOptions(url) {
 	return {
@@ -106,11 +145,7 @@ function getTitle($) {
 function toAbsoluteUrl(baseUrl, relativeUrl) {
 	const parsedBaseUrl = urlParser.parse(baseUrl);
 
-	if(relativeUrl.match(/^\/\//)) {
-		relativeUrl = parsedBaseUrl.protocol + relativeUrl;
-	}
-
-	let parsedRelativeUrl = urlParser.parse(relativeUrl);
+	let parsedRelativeUrl = urlParser.parse(relativeUrl, false, true);
 
 	if(! parsedRelativeUrl.protocol) {
 		parsedRelativeUrl.protocol = parsedBaseUrl.protocol;
